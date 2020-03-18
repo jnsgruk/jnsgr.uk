@@ -1,7 +1,7 @@
 baseURL = "https://jnsgr.uk"
 languageCode = "en-gb"
 defaultContentLanguage = "en"
-title = "Jon Seager 🐧"
+title = "Jon Seager"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
