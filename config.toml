@@ -58,19 +58,19 @@ disableKinds = "RSS"
 
   [[params.social]]
     name = "twitter"
-    url = "https://twitter.com/jnsgruk"
+    url = "https://twitter.com/jnsgruk/"
 
   [[params.social]]
     name = "github"
-    url = "https://github.com/jnsgruk"
+    url = "https://github.com/jnsgruk/"
   
   [[params.social]]
     name = "linkedin"
-    url = "https://linkedin.com/in/jnsgruk"
+    url = "https://linkedin.com/in/jnsgruk/"
 
   [[params.social]]
     name = "telegram"
-    url = "https://t.me/jnsgruk"
+    url = "https://t.me/jnsgruk/"
   
 
 [menu]
