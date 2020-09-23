@@ -12,3 +12,4 @@ RUN hugo -t hermit --minify
 # Generate the nginx container and copy the build artifacts across
 FROM nginx:mainline-alpine
 COPY --from=build /home/ci/src/public /usr/share/nginx/html/
+COPY ./nginx.conf /etc/nginx/conf.d/default
