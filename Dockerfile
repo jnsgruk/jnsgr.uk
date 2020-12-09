@@ -28,4 +28,5 @@ COPY --from=build /tmp/gosherve /gosherve
 # Switch user
 USER gosherve
 # Set entrypoint
+EXPOSE 8080
 ENTRYPOINT [ "/gosherve" ]
