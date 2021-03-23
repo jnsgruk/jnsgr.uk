@@ -1,0 +1,32 @@
+FROM alpine:3.12 as build
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+# Specify version of Gosherve
+ENV GOSHERVE_VERSION 0.1.0
+# Copy the source code into the build container
+COPY . /home/gosherve/src
+# Install hugo and set permissions on directory properly
+RUN adduser -D gosherve && apk add --no-cache hugo ca-certificates && chown -R gosherve: /home/gosherve
+# Change user and directory
+USER gosherve
+WORKDIR /home/gosherve/src
+# Compile the Hugo page and fetch gosherve
+RUN hugo -t hermit --minify && \
+  # Fetch gosherve
+  wget -qO /tmp/gosherve "https://github.com/jnsgruk/gosherve/releases/download/${GOSHERVE_VERSION}/gosherve-${GOSHERVE_VERSION}-linux-amd64" && \
+  # Make the binary executable
+  chmod 755 /tmp/gosherve
+
+FROM alpine:3.12
+RUN adduser -D gosherve && \
+  apk add --no-cache ca-certificates && \
+  chown -R gosherve: /home/gosherve
+# Copy in the website source
+COPY --from=build /home/gosherve/src/public /srv/
+# Add the gosherve binary
+COPY --from=build /tmp/gosherve /usr/bin/gosherve
+COPY debug-entry.sh /entrypoint.sh
+# Switch user
+USER gosherve
+# Set entrypoint
+EXPOSE 8080
+ENTRYPOINT [ "/entrypoint.sh" ]
