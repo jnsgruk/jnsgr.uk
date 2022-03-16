@@ -1,4 +1,4 @@
-FROM alpine:3.12 as build
+FROM alpine:latest as build
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Specify version of Gosherve
 ENV GOSHERVE_VERSION 0.1.0
