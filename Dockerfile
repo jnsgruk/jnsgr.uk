@@ -5,12 +5,14 @@ ENV GOSHERVE_VERSION 0.1.0
 # Copy the source code into the build container
 COPY . /home/gosherve/src
 # Install hugo and set permissions on directory properly
-RUN adduser -D gosherve && apk add --no-cache hugo ca-certificates && chown -R gosherve: /home/gosherve
+RUN adduser -D gosherve && \
+    apk add --no-cache hugo ca-certificates go git && \
+    chown -R gosherve: /home/gosherve
 # Change user and directory
 USER gosherve
 WORKDIR /home/gosherve/src
 # Compile the Hugo page and fetch gosherve
-RUN hugo -t hermit --minify && \
+RUN hugo --minify && \
   # Fetch gosherve
   wget -qO /tmp/gosherve "https://github.com/jnsgruk/gosherve/releases/download/${GOSHERVE_VERSION}/gosherve-${GOSHERVE_VERSION}-linux-amd64" && \
   # Make the binary executable
