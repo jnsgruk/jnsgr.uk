@@ -1,7 +1,7 @@
 FROM alpine:latest as build
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Specify version of Gosherve
-ENV GOSHERVE_VERSION 0.2.0
+ENV GOSHERVE_VERSION 0.2.1
 # Copy the source code into the build container
 COPY . /home/gosherve/src
 # Install hugo and set permissions on directory properly
