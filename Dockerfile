@@ -2,17 +2,21 @@ FROM alpine:latest as build
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 # Specify version of Gosherve
 ENV GOSHERVE_VERSION 0.2.3
+ENV HUGO_VERSION 0.121.2
 # Copy the source code into the build container
 COPY . /home/gosherve/src
-# Install hugo and set permissions on directory properly
+# Install dependencies and set permissions
 RUN adduser -D gosherve && \
-    apk add --no-cache hugo ca-certificates go git && \
+    apk add --no-cache ca-certificates go git && \
     chown -R gosherve: /home/gosherve
 # Change user and directory
 USER gosherve
 WORKDIR /home/gosherve/src
-# Compile the Hugo page and fetch gosherve
-RUN hugo --minify && \
+
+# Fetch Hugo, compile the Hugo page and fetch gosherve
+RUN wget -qO /tmp/hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" && \
+  tar -C /tmp -xvzf /tmp/hugo.tar.gz && \
+  /tmp/hugo --minify && \
   # Fetch gosherve
   wget -qO /tmp/gosherve.tar.gz "https://github.com/jnsgruk/gosherve/releases/download/${GOSHERVE_VERSION}/gosherve_${GOSHERVE_VERSION}_linux_x86_64.tar.gz" && \
   # Untar the executable
