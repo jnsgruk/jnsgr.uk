@@ -1,0 +1,22 @@
+title: Jon Seager
+
+languageCode: "en"
+languageName: "English"
+languageDirection: "ltr"
+weight: 1
+
+params:
+  dateFormat: 2 January 2006
+  description: Jon Seager's personal website and blog.
+  author:
+    name: Jon Seager
+
+author:
+  name: Jon Seager
+  bio: Husband, father, leader, software engineer, geek.
+  image: img/author.jpg
+  links:
+    - github: "https://github.com/jnsgruk"
+    - mastodon: "https://hachyderm.io/@jnsgruk"
+    - linkedin: "https://linkedin.com/in/jnsgruk"
+    - telegram: "https://t.me/jnsgruk"

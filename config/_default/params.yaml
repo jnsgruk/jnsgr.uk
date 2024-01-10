@@ -1,0 +1,58 @@
+colorScheme: slate
+defaultAppearance: dark
+autoSwitchAppearance: true
+
+enableSearch: false
+enableCodeCopy: true
+enableImageLazyLoading: true
+enableImageWebp: true
+
+fingerprintAlgorithm: sha256
+
+header:
+  layout: hybrid
+  showTitle: true
+  logo: img/logo.jpg
+
+footer:
+  showCopyright: false
+  showThemeAttribution: false
+  showAppearanceSwitcher: true
+  showScrollToTop: true
+
+homepage:
+  layout: profile
+  showRecent: false
+
+article:
+  showDate: true
+  showDateUpdated: false
+  showAuthor: true
+  showBreadcrumbs: false
+  showDraftLabel: true
+  showEdit: false
+  editAppendPath: true
+  showHeadingAnchors: true
+  showPagination: true
+  invertPagination: false
+  showReadingTime: true
+  showTableOfContents: true
+  showTaxonomies: false
+  showWordCount: false
+  showComments: false
+
+list:
+  showBreadcrumbs: false
+  showSummary: false
+  showTableOfContents: false
+  showTaxonomies: false
+  groupByYear: true
+  paginationWidth: 1
+
+sitemap:
+  excludedKinds:
+    - taxonomy
+    - term
+
+taxonomy:
+  showTermCount: true

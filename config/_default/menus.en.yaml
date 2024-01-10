@@ -1,0 +1,8 @@
+main:
+  # - name: Blog
+  #   pageRef: posts
+  #   weight: 10
+
+  - name: Resume
+    pageRef: resume
+    weight: 30
