@@ -11,10 +11,6 @@ kill_timeout = "5s"
 [experimental]
   auto_rollback = true
 
-[env]
-  GOSHERVE_REDIRECT_MAP_URL = "https://gist.githubusercontent.com/jnsgruk/b590f114af1b041eeeab3e7f6e9851b7/raw"
-  GOSHERVE_WEBROOT = "./public"
-
 [[services]]
   protocol = "tcp"
   internal_port = 8080

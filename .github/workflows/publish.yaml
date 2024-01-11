@@ -3,13 +3,43 @@ on:
   push:
     branches:
       - main
-env:
-  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+permissions:
+  packages: write
+
 jobs:
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only --no-cache
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install nix
+        uses: DeterminateSystems/nix-installer-action@v9
+
+      - name: Setup magic-nix-cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build container
+        run: |
+          nix build -L .#container
+
+      - name: Upload container to ghcr.io
+        run: |
+          docker load < result
+          docker tag "jnsgruk/jnsgr.uk:$GITHUB_SHA" "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
+          docker push "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
+
+      - name: Deploy site
+        run: |
+          nix run nixpkgs#flyctl -- deploy -i "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
+        env:
+          FLY_ACCESS_TOKEN: ${{ secrets.FLY_API_TOKEN }}
