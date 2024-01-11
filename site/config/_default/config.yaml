@@ -1,0 +1,18 @@
+baseURL: "https://jnsgr.uk"
+
+defaultContentLanguage: en
+
+enableRobotsTXT: true
+paginate: 15
+summaryLength: 0
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+frontmatter:
+  date:
+    - ":filename"
+    - ":default"

@@ -1,6 +1,6 @@
 package main
 
-//go:generate hugo --minify
+//go:generate hugo --minify -s site -d ../public
 
 import (
 	"embed"
