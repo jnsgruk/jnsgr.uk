@@ -20,7 +20,7 @@ var (
 
 	logLevel = flag.String("log-level", "info", "log level of the application")
 
-	redirectsURL = "https://gist.githubusercontent.com/jnsgruk/b590f114af1b041eeeab3e7f6e9851b7/raw/ec76eafcd0f626ec51a53a8407cf1ce8cb6b2ac3/routes"
+	redirectsURL = "https://gist.githubusercontent.com/jnsgruk/b590f114af1b041eeeab3e7f6e9851b7/raw"
 
 	//go:embed public
 	publicFS embed.FS
