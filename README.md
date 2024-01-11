@@ -8,3 +8,11 @@ wrote for serving this page, as well as some static URL redirects from a Github 
 
 The site is hosted on a free instance at [Fly.io](https://fly.io), and deployed automatically with
 Github Actions.
+
+## Updating the Hugo theme
+
+To update the Hugo theme, run:
+
+```bash
+git submodule update --remote --merge
+```
