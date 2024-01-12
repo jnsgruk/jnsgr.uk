@@ -5,8 +5,14 @@ main:
 
   - name: CV
     pageRef: cv
-    weight: 30
+    weight: 20
 
   - name: Meta
     pageRef: colophon
+    weight: 30
+
+  - identifier: "appearance"
     weight: 99
+    params:
+      action: "appearance"
+      icon: "moon"
