@@ -17,4 +17,7 @@ frontmatter:
     - ":filename"
     - ":default"
 
+permalinks:
+  posts: /:year/:month/:slug/
+
 enableGitInfo: true

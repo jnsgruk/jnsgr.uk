@@ -1,7 +1,7 @@
 main:
-  # - name: Blog
-  #   pageRef: posts
-  #   weight: 10
+  - name: Blog
+    pageRef: posts
+    weight: 10
 
   - name: CV
     pageRef: cv

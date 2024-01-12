@@ -4,6 +4,18 @@ goldmark:
 
 highlight:
   noClasses: false
+  anchorLineNos: false
+  codeFences: true
+  guessSyntax: false
+  hl_Lines: ""
+  hl_inline: false
+  lineAnchors: ""
+  lineNoStart: 1
+  lineNos: true
+  lineNumbersInTable: true
+  noHl: true
+  style: github
+  tabWidth: 2
 
 tableOfContents:
   startLevel: 2
