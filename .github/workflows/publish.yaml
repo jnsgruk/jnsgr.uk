@@ -35,11 +35,11 @@ jobs:
       - name: Upload container to ghcr.io
         run: |
           docker load < result
-          docker tag "jnsgruk/jnsgr.uk:$GITHUB_SHA" "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
-          docker push "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
+          docker tag "jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)" "ghcr.io/jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)"
+          docker push "ghcr.io/jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)"
 
       - name: Deploy site
         run: |
-          nix run nixpkgs#flyctl -- deploy -i "ghcr.io/jnsgruk/jnsgr.uk:$GITHUB_SHA"
+          nix run nixpkgs#flyctl -- deploy -i "ghcr.io/jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)"
         env:
           FLY_ACCESS_TOKEN: ${{ secrets.FLY_API_TOKEN }}
