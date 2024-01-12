@@ -16,7 +16,6 @@ import (
 
 var (
 	commit string = "dev"
-	date   string
 
 	logLevel = flag.String("log-level", "info", "log level of the application")
 
@@ -39,7 +38,7 @@ func main() {
 
 	// Instantiate a new Gosherve server
 	s := server.NewServer(&fsys, redirectsURL)
-	slog.Info("jnsgruk", "commit", commit, "build_date", date)
+	slog.Info("jnsgruk", "commit", commit)
 
 	// Hydrate the redirects map
 	err = s.RefreshRedirects()

@@ -6,3 +6,7 @@ main:
   - name: Resume
     pageRef: resume
     weight: 30
+
+  - name: Meta
+    pageRef: colophon
+    weight: 99

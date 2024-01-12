@@ -16,3 +16,5 @@ frontmatter:
   date:
     - ":filename"
     - ":default"
+
+enableGitInfo: true

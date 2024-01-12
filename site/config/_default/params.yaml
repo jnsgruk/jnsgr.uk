@@ -1,5 +1,5 @@
 colorScheme: slate
-defaultAppearance: dark
+defaultAppearance: light
 autoSwitchAppearance: true
 
 enableSearch: false
@@ -17,7 +17,7 @@ header:
 footer:
   showCopyright: false
   showThemeAttribution: false
-  showAppearanceSwitcher: true
+  showAppearanceSwitcher: false
   showScrollToTop: true
 
 homepage:

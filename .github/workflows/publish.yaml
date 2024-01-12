@@ -30,7 +30,7 @@ jobs:
 
       - name: Build container
         run: |
-          nix build -L .#container
+          nix build -L .#jnsgruk-container
 
       - name: Upload container to ghcr.io
         run: |
