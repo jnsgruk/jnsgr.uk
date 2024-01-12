@@ -5,12 +5,11 @@ layout: "simple"
 
 This site is built using [Go], [Hugo] and [Nix].
 
-the page content itself is a static site, rendered with [Hugo]. It uses the lovely
-[congo] theme. The page is served with a custom webserver I wrote called [gosherve]. This was
-initially a basic web server that would serve files from a directory, and a series of redirects
-placed in a text file at a URL. To build this site, I [modified] gosherve such that it's server
-component is exposed as a library, and [refactored] it to serve content from an embedded
-filesystem.
+The page content is a static site, rendered with [Hugo]. It uses the lovely [congo] theme. The page
+is served with a custom webserver I wrote called [gosherve]. This was initially a basic web server
+that would serve files from a directory, and a series of redirects placed in a text file at a URL.
+To build this site, I [modified] gosherve such that it's server component is exposed as a library,
+and [refactored] it to serve content from an embedded filesystem.
 
 This site is then a simple Go wrapper around gosherve which hardcodes the location of the redirects
 file, and embeds the built Hugo site.
