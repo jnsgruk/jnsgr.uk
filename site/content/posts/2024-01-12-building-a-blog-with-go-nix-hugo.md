@@ -3,6 +3,9 @@ title: Building a blog with Go, Nix and Hugo
 description: |
   Documenting how I render, serve, build and deploy my personal website and blog using a
   combination of Go, Hugo, Nix and Fly.io.
+summary: |
+  Documenting how I render, serve, build and deploy my personal website and blog using a
+  combination of Go, Hugo, Nix and Fly.io.
 tags:
   - Go
   - Hugo
