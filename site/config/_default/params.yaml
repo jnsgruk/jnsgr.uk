@@ -2,7 +2,7 @@ colorScheme: slate
 defaultAppearance: light
 autoSwitchAppearance: true
 
-enableSearch: false
+enableSearch: true
 enableCodeCopy: true
 enableImageLazyLoading: true
 enableImageWebp: true
@@ -28,7 +28,7 @@ article:
   showDate: true
   showDateUpdated: false
   showAuthor: true
-  showBreadcrumbs: false
+  showBreadcrumbs: true
   showDraftLabel: true
   showEdit: false
   editAppendPath: true
@@ -38,12 +38,12 @@ article:
   showReadingTime: true
   showTableOfContents: true
   showTaxonomies: false
-  showWordCount: false
+  showWordCount: true
   showComments: false
 
 list:
-  showBreadcrumbs: false
-  showSummary: false
+  showBreadcrumbs: true
+  showSummary: true
   showTableOfContents: false
   showTaxonomies: false
   groupByYear: true
