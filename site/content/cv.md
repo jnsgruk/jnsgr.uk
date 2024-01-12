@@ -1,5 +1,5 @@
 ---
-title: Resume
+title: Curriculum Vitae
 layout: "simple"
 ---
 
@@ -88,6 +88,10 @@ to drive their teams more effectively and sustainably. The first cohort began in
 - **2017** - Certified Information Systems Security Professional (CISSP) - [ISC2]
 - **2014** - Military & Strategic Leadership - [Royal Military Academy Sandhurst]
 - **2013** - BSc Computer Science - [University of Southampton]
+
+## Contact
+
+You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t.me/jnsgruk).
 
 [Canonical]: https://canonical.com
 [ops]: https://github.com/canonical/operator

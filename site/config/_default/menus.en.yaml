@@ -3,8 +3,8 @@ main:
   #   pageRef: posts
   #   weight: 10
 
-  - name: Resume
-    pageRef: resume
+  - name: CV
+    pageRef: cv
     weight: 30
 
   - name: Meta
