@@ -15,4 +15,3 @@ main:
     weight: 99
     params:
       action: "appearance"
-      icon: "moon"
