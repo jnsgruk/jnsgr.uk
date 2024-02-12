@@ -103,6 +103,6 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [Thales UK]: https://www.thalesgroup.com/en/countries/europe/thales-united-kingdom
 [British Army]: https://www.army.mod.uk/
 [sshizzle]: https://www.linkedin.com/pulse/zero-trust-ssh-microsoft-azure-jon-seager/
-[MWR InfoSecurity]: http://www.f-secure.com/en/consulting
+[MWR InfoSecurity]: https://www.linkedin.com/company/mwr-infosecurity
 [ISC2]: https://www.isc2.org/certifications/cissp
 [IET]: https://www.theiet.org/career/professional-registration/chartered-engineer/
