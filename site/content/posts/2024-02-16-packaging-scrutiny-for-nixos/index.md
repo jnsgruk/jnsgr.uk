@@ -27,7 +27,7 @@ This all looked very compelling, but it hasn't been packaged for NixOS as far as
 
 Below is a screenshot of Scrutiny's dashboard:
 
-[![scrutiny dashboard](./01.png)](./01.png)
+[![scrutiny dashboard](01.png)](01.png)
 
 ## Architecture
 
@@ -578,6 +578,6 @@ This was a pretty quick exercise - I'd estimate at about 3 hours in total. No do
 
 I also need to go and investigate this rather sad looking hard disk...
 
-[![sad hard disk is sad](./02.png)](./02.png)
+[![sad hard disk is sad](02.png)](02.png)
 
 That's all for now! Thanks for reading if you got this far!

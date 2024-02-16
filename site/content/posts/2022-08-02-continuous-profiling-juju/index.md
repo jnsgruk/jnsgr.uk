@@ -25,7 +25,7 @@ Over the past few days, I've been diving into some charm development to get a ha
 
 But first, let's start with a juicy screenshot showing where we're headed with this post!
 
-[![controller-profile](./01.png)](./01.png)
+[![controller-profile](01.png)](01.png)
 
 ## What is continuous profiling?
 
@@ -117,7 +117,7 @@ Check out the asciinema recording below for a detailed walkthrough, or follow th
 
 [![asciicast](https://asciinema.org/a/517942.svg)](https://asciinema.org/a/517942)
 
-[![controller-profile](./01.jpg)](./01.jpg)
+[![controller-profile](01.jpg)](01.jpg)
 
 ```shell
 # Bootstrap a new Juju controller on LXD
@@ -149,11 +149,11 @@ Check out the asciinema recording below for a detailed walkthrough, or follow th
 
 Once you're done with that, you can login to the Parca dashboard and start comparing profiles:
 
-[![parca-zinc-profile](./02.png)](./02.png)
+[![parca-zinc-profile](02.png)](02.png)
 
 And also take time to check out the targets page, and notice that the target has been automatically labelled with information about the target application's location in the Juju model:
 
-[![parca-zinc-target](./03.png)](./03.png)
+[![parca-zinc-target](03.png)](03.png)
 
 To try out profiling Zinc with Parca yourself, try the following:
 
@@ -186,7 +186,7 @@ Check out the asciinema recording below for a detailed walkthrough, or follow th
 
 Once you're done, you can login to the Grafana instance and check the dashboard for Parca:
 
-[![grafana](./04.png)](./04.png)
+[![grafana](04.png)](04.png)
 
 To try out the COS x Parca integration yourself, try the following:
 
