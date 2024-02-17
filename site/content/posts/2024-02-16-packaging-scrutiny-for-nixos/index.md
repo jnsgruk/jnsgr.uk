@@ -298,7 +298,7 @@ I needed a convenient way to convert this Nix-native configuration format into t
         listen:
           port: ${builtins.toString cfg.port}
           host: "${cfg.host}"
-          basepath: "/${cfg.basepath}"
+          basepath: "${if cfg.basepath != "" then "/" + cfg.basepath else ""}"
 
         database:
             location: "/var/lib/scrutiny/scrutiny.db"
@@ -328,7 +328,7 @@ Let's take a look at the part of the module which turns these options into a ren
 
     # Open the relevant ports in the system firewall if configured
     networking.firewall = lib.mkIf cfg.openFirewall {
-      allowedTCPPorts = [ 8080 ];
+      allowedTCPPorts = [ cfg.port ];
     };
 
     # If Scrutiny is enabled, create a systemd unit to start it
@@ -377,7 +377,7 @@ That's enough to get the dashboard started, but it doesn't take care of starting
 
           endpoint = lib.mkOption {
             type = lib.types.str;
-            default = "http://localhost:${builtins.toString cfg.port}/${cfg.basepath}";
+            default = "http://${cfg.host}:${builtins.toString cfg.port}/${cfg.basepath}";
             description = lib.mdDoc "Scrutiny app API endpoint for sending metrics to.";
           };
 
