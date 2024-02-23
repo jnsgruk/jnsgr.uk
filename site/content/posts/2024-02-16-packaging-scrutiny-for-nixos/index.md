@@ -15,6 +15,8 @@ tags:
 layout: post
 ---
 
+> **Update**: Since writing this post, I've contributed Scrutiny upstream to nixpkgs/NixOS. You can see the write up of that effort [here](https://jnsgr.uk/2024/02/contributing-scrutiny-to-nixpkgs/).
+
 ## Introduction
 
 In a recent (well, recent-ish) [episode of the Self Hosted Show](https://selfhosted.show/28), there was some talk of a hard drive monitoring tool called Scrutiny. Scrutiny is a hard drive monitoring tool that exposes S.M.A.R.T data in a nice, clean dashboard. It gathers that S.M.A.R.T data using the venerable [smartd](https://www.smartmontools.org/), which is a Linux daemon that monitors S.M.A.R.T data from a huge number of ATA, IDE, SCSI-3 drives. The code is available [on Github](https://github.com/AnalogJ/scrutiny).
