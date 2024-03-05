@@ -21,7 +21,7 @@ I run a very small homelab that provides some basic services to my home network.
 
 It also runs a few other small services - all of which are exclusively available over Tailscale to my other devices. I wanted a small dashboard solution that could give me links to each of those services with a nice simple URL.
 
-There are certainly plenty of options; this seems to be a highly crowded space in the open source homelab world. I settled on the rather ambiguously named [homepage](https://gethomepage.dev). At the time of writing, my dashboard looks like so, though there are people who have been far more creative with the apperance!
+There are certainly plenty of options; this seems to be a highly crowded space in the open source homelab world. I settled on the rather ambiguously named [homepage](https://gethomepage.dev). At the time of writing, my dashboard looks like so, though there are people who have been far more creative with the appearance!
 
 [![my dashboard](01.png)](01.png)
 
