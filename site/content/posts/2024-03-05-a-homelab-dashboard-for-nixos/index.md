@@ -144,6 +144,8 @@ In the mean time I wrote [a short patch](https://github.com/gethomepage/homepage
 }
 ```
 
+> **Update**: My feature request got upvoted pretty quickly, and as a result my [pull request](https://github.com/gethomepage/homepage/pull/3075) was merged. This means that following the next release of Homepage, I'll be able to drop the patch from the Nix package. Thanks to all those who upvoted it!
+
 ## Bolstering The Test Suite
 
 When I originally implemented the tests for the module, they simply enabled the service and ensure that it responded on the specified port. I wanted to include some logic in the test that ensured the ability to detect when managed configuration should be used, and when the module should respect an existing implementation.
