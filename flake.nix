@@ -41,11 +41,11 @@
               # the revision from the flake.
               postPatch = ''
                 substituteInPlace ./site/layouts/shortcodes/gitinfo.html \
-                  --replace "{{ .Page.GitInfo.Hash }}" "${rev}" \
-                  --replace "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
+                  --replace-fail "{{ .Page.GitInfo.Hash }}" "${rev}" \
+                  --replace-fail "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
                 
                 substituteInPlace ./site/config/_default/config.yaml \
-                  --replace "enableGitInfo: true" "enableGitInfo: false"
+                  --replace-fail "enableGitInfo: true" "enableGitInfo: false"
               '';
 
               # Generate the Hugo site before building the Go application which embeds the
