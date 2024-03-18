@@ -58,7 +58,7 @@ There is nothing special about `ghvmctl`, it is just a `bash` script. Perhaps on
 
 The script is mostly contained in a [single file](https://github.com/snapcrafters/ghvmctl/blob/1ac4a99dd1c6f78226b60eda205cd06c6ac20dfa/src/ghvmctl), apart from [`ghvmctl-runner`](https://github.com/snapcrafters/ghvmctl/blob/1ac4a99dd1c6f78226b60eda205cd06c6ac20dfa/src/ghvmctl-runner) which is pushed automatically into any VMs started by `ghvmctl`, and provides a way for applications to be run with all the appropriate environment variables such that graphical applications can run when the VM is being controlled headlessly (such as `DISPLAY`, `WAYLAND_DISPLAY`, `XDG_SESSION_TYPE`, etc.).
 
-There are very few dependencies for the script, but I decided to [package it as a snap](https://github.com/snapcrafters/ghvmctl/blob/1ac4a99dd1c6f78226b60eda205cd06c6ac20dfa/src/ghvmctl-runner) to simplify installing it on Github runners. The snap is simple, containing just the two scripts mentioned above, and the LXC client. This also means you can install and use the tool locally should you wish to experiment with it:
+There are very few dependencies for the script, but I decided to [package it as a snap](https://github.com/snapcrafters/ghvmctl/blob/1ac4a99dd1c6f78226b60eda205cd06c6ac20dfa/snap/snapcraft.yaml) to simplify installing it on Github runners. The snap is simple, containing just the two scripts mentioned above, and the LXC client. This also means you can install and use the tool locally should you wish to experiment with it:
 
 ```bash
 # Install ghvmctl
