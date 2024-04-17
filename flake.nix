@@ -5,85 +5,96 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , ...
-    }:
+    { self, nixpkgs, ... }:
     let
       forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
-      pkgsForSystem = system: (import nixpkgs {
-        inherit system;
-      });
+      pkgsForSystem = system: (import nixpkgs { inherit system; });
     in
     {
-      packages = forAllSystems
-        (system:
-          let
-            inherit (pkgsForSystem system) buildEnv buildGoModule cacert dockerTools hugo lib;
-            version = self.shortRev or (builtins.substring 0 7 self.dirtyRev);
-            rev = self.rev or self.dirtyRev;
-          in
-          {
-            default = self.packages.${system}.jnsgruk;
+      packages = forAllSystems (
+        system:
+        let
+          inherit (pkgsForSystem system)
+            buildEnv
+            buildGoModule
+            cacert
+            dockerTools
+            hugo
+            lib
+            ;
+          version = self.shortRev or (builtins.substring 0 7 self.dirtyRev);
+          rev = self.rev or self.dirtyRev;
+        in
+        {
+          default = self.packages.${system}.jnsgruk;
 
-            jnsgruk = buildGoModule {
-              inherit version;
-              pname = "jnsgruk";
-              src = lib.cleanSource ./.;
+          jnsgruk = buildGoModule {
+            inherit version;
+            pname = "jnsgruk";
+            src = lib.cleanSource ./.;
 
-              vendorHash = "sha256-4J2Qonb17v1lJgdljHCuwzTALEkAUoIMRCfwq6ijoKI=";
+            vendorHash = "sha256-4J2Qonb17v1lJgdljHCuwzTALEkAUoIMRCfwq6ijoKI=";
 
-              buildInputs = [ cacert ];
-              nativeBuildInputs = [ hugo ];
+            buildInputs = [ cacert ];
+            nativeBuildInputs = [ hugo ];
 
-              # Nix doesn't play well with Hugo's "GitInfo" module, so disable it and inject
-              # the revision from the flake.
-              postPatch = ''
-                substituteInPlace ./site/layouts/shortcodes/gitinfo.html \
-                  --replace-fail "{{ .Page.GitInfo.Hash }}" "${rev}" \
-                  --replace-fail "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
-                
-                substituteInPlace ./site/config/_default/config.yaml \
-                  --replace-fail "enableGitInfo: true" "enableGitInfo: false"
-              '';
+            # Nix doesn't play well with Hugo's "GitInfo" module, so disable it and inject
+            # the revision from the flake.
+            postPatch = ''
+              substituteInPlace ./site/layouts/shortcodes/gitinfo.html \
+                --replace "{{ .Page.GitInfo.Hash }}" "${rev}" \
+                --replace "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
 
-              # Generate the Hugo site before building the Go application which embeds the
-              # built site.
-              preBuild = ''
-                go generate ./...
-              '';
+              substituteInPlace ./site/config/_default/config.yaml \
+                --replace "enableGitInfo: true" "enableGitInfo: false"
+            '';
 
-              ldflags = [
-                "-X main.commit=${rev}"
+            # Generate the Hugo site before building the Go application which embeds the
+            # built site.
+            preBuild = ''
+              go generate ./...
+            '';
+
+            ldflags = [ "-X main.commit=${rev}" ];
+
+            # Rename the main executable in the output directory
+            postInstall = ''
+              mv $out/bin/jnsgr.uk $out/bin/jnsgruk
+            '';
+
+            meta.mainProgram = "jnsgruk";
+          };
+
+          jnsgruk-container = dockerTools.buildImage {
+            name = "jnsgruk/jnsgr.uk";
+            tag = version;
+            created = "now";
+            copyToRoot = buildEnv {
+              name = "image-root";
+              paths = [
+                self.packages.${system}.jnsgruk
+                cacert
               ];
-
-              # Rename the main executable in the output directory
-              postInstall = ''
-                mv $out/bin/jnsgr.uk $out/bin/jnsgruk
-              '';
-
-              meta.mainProgram = "jnsgruk";
+              pathsToLink = [
+                "/bin"
+                "/etc/ssl/certs"
+              ];
             };
-
-            jnsgruk-container = dockerTools.buildImage {
-              name = "jnsgruk/jnsgr.uk";
-              tag = version;
-              created = "now";
-              copyToRoot = buildEnv {
-                name = "image-root";
-                paths = [ self.packages.${system}.jnsgruk cacert ];
-                pathsToLink = [ "/bin" "/etc/ssl/certs" ];
-              };
-              config = {
-                Entrypoint = [ "${lib.getExe self.packages.${system}.jnsgruk}" ];
-                Expose = [ 8080 8801 ];
-                User = "10000:10000";
-              };
+            config = {
+              Entrypoint = [ "${lib.getExe self.packages.${system}.jnsgruk}" ];
+              Expose = [
+                8080
+                8801
+              ];
+              User = "10000:10000";
             };
-          });
+          };
+        }
+      );
 
-      devShells = forAllSystems (system:
+      devShells = forAllSystems (
+        system:
         let
           pkgs = pkgsForSystem system;
         in
@@ -102,7 +113,7 @@
             ];
             shellHook = "exec zsh";
           };
-        });
+        }
+      );
     };
 }
-
