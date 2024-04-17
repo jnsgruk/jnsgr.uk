@@ -17,7 +17,7 @@
         let
           inherit (pkgsForSystem system)
             buildEnv
-            buildGoModule
+            buildGo122Module
             cacert
             dockerTools
             hugo
@@ -29,12 +29,12 @@
         {
           default = self.packages.${system}.jnsgruk;
 
-          jnsgruk = buildGoModule {
+          jnsgruk = buildGo122Module {
             inherit version;
             pname = "jnsgruk";
             src = lib.cleanSource ./.;
 
-            vendorHash = "sha256-4J2Qonb17v1lJgdljHCuwzTALEkAUoIMRCfwq6ijoKI=";
+            vendorHash = "sha256-Qiib0Co+YkQd1GD3344W8vYt2G9NkuD9PP7OpiaZ2/E=";
 
             buildInputs = [ cacert ];
             nativeBuildInputs = [ hugo ];
