@@ -140,11 +140,14 @@ imports = [ lanzaboote.nixosModules.lanzaboote ];
 
 In my flake, I use a custom [helper function](https://github.com/jnsgruk/nixos-config/blob/e436e046f19c76fcea0ac2570e7a747153c02ad5/lib/helpers.nix#L39) to build NixOS configurations, so the module is [passed directly](https://github.com/jnsgruk/nixos-config/blob/e436e046f19c76fcea0ac2570e7a747153c02ad5/lib/helpers.nix#L59) to `lib.nixosSystem` through the `modules` attribute.
 
-The `lanzaboote` module replaces the `systemd-boot` module, and as such you must explicitly _disable_ `systemd-boot` when enabling `lanzaboote`:
+The `lanzaboote` module replaces the `systemd-boot` module, and as such you must explicitly _disable_ `systemd-boot` when enabling `lanzaboote`. Additionally, if you wish to use the TPM for disk unlock (described in the next section), you must use the systemd initrd hooks (or something like [`clevis`](https://github.com/latchset/clevis/)):
 
 ```nix
 boot = {
+  initrd.systemd.enable = true;
+
   loader.systemd-boot.enable = lib.mkForce false;
+
   lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
@@ -208,10 +211,17 @@ Now that we're (reasonably) confident that no one can tamper with the boot proce
 
 This is actually more common than you might think - Windows has enabled this behaviour by default for some time with Bitlocker disk encryption, and Canonical is also [working on](https://ubuntu.com/blog/tpm-backed-full-disk-encryption-is-coming-to-ubuntu) bringing TPM-backed full disk encryption to Ubuntu.
 
-This is probably the easiest step of them all! A simple invocation of `systemd-cryptenroll` is all that's required. The arguments below instruct the machine that PCRs 0, 2 and 7 should be measured and verified before the TPM is allowed to unlock the disk:
+This is probably the easiest step of them all! A simple invocation of `systemd-cryptenroll` is all that's required. The arguments below instruct the machine that PCRs 0, 2, 7 and 12 should be measured and verified before the TPM is allowed to unlock the disk.
+
+According to the [Linux TPM PCR Regsitry](https://uapi-group.org/specifications/specs/linux_tpm_pcr_registry/), this means the following are measured before the LUKS key is presented:
+
+- PCR 0: Core system firmware executable code
+- PCR 2: Extended or pluggable executable code
+- PCR 7: SecureBoot state
+- PCR 12: Kernel command line, system credentials and system configuration images
 
 ```shell
-❯ sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7 /dev/nvme0n1p2
+❯ sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+2+7+12 --wipe-slot=tpm2 /dev/nvme0n1p2
 ```
 
 And that's it! The next time you reboot, your disk should be automatically unlocked by the TPM, and your machine should boot straight to your display manager, or the TTY login if no display manager is configured.
@@ -239,3 +249,5 @@ I don't claim to be an expert on the inner workings of TPMs, nor Secure Boot. Th
 If you spot an inaccuracy in this post, reach out and let me know on Mastodon, on Telegram, by email, or however you prefer!
 
 Until next time!
+
+> Update 2024/04/29: Thanks to [@pimeys](https://github.com/pimeys/) for pointing out that one must enable the systemd initrd hooks `systemd-cryptenroll` to function correctly, and also that PCR 12 must be measured to prevent the LUKS key from being released if the kernel command line has been modified.
