@@ -18,7 +18,7 @@ layout: post
 
 In my day job at Canonical, I lead the teams developing [Juju](https://juju.is), and a whole host of [charms](https://charmhub.io). Charms are software packages used for deploying applications on any infrastructure you have available. The packages are portable, meaning you can use our PostgreSQL operator on AWS, on Azure, on Openstack, on Google Cloud, etc. We're building up quite the portfolio of popular open source applications across data engineering, observability, identity, telco, MLOps and more. I won't go into detail about Juju or charms in this post, but I likely will in a future post.
 
-The important thing for this post is that I look after >10 software teams, who use two different software forges (Github and Launchpad), and all push artifacts into the both the [Snap Store](https://snapcraft.io) and the [Charmhub](https://charmhub.io). I wanted a way to keep track of their releases, and provide a tool that my managers could use to do the same. Put simply, I wanted a unified view of:
+The important thing for this post is that I look after >10 software teams, who use two different software forges (Github and Launchpad), and all push artifacts into both the [Snap Store](https://snapcraft.io) and the [Charmhub](https://charmhub.io). I wanted a way to keep track of their releases, and provide a tool that my managers could use to do the same. Put simply, I wanted a unified view of:
 
 - The latest Github releases
 - The latest Launchpad tags
