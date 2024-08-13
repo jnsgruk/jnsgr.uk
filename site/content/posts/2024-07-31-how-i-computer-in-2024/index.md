@@ -11,6 +11,7 @@ tags:
   - Hardware
   - Blog
 layout: post
+cover: 06.png
 ---
 
 ## Introduction
@@ -18,8 +19,6 @@ layout: post
 I'm always fascinated to see how people use their computers - which applications they choose, how they set up their desktop environments and even how their screens are laid out on their desk. I've learned some great tricks from friends and colleagues over the years, so I thought I'd write up how I use my machines in 2024.
 
 The setup I'm using today has been quite static for a couple of years, with only minor adjustments. Each time I change something significant, I leave it for at least a couple of months to try and build muscle memory and see if I'm going to make the adjustment permanent.
-
-[![screenshot of an empty hyprland desktop showing waybar at the top](06.png)](06.png)
 
 ## Hardware
 
