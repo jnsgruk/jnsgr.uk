@@ -2,7 +2,7 @@ module github.com/jnsgruk/jnsgr.uk
 
 go 1.22
 
-require github.com/jnsgruk/gosherve v0.3.3
+require github.com/jnsgruk/gosherve v0.3.4
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
