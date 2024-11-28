@@ -7,7 +7,10 @@
   outputs =
     { self, nixpkgs, ... }:
     let
-      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ];
+      forAllSystems = nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
       pkgsForSystem = system: (import nixpkgs { inherit system; });
     in
@@ -34,7 +37,7 @@
             pname = "jnsgruk";
             src = lib.cleanSource ./.;
 
-            vendorHash = "sha256-xAQED0sCNvlZ+bjP4IXWqogWNAD5HGRqOeH9l0zQkdg=";
+            vendorHash = "sha256-eHCRtkZ9YdOFxCbSYvEGMxyl1P4WPyvZXtZMpW05eNk=";
 
             buildInputs = [ cacert ];
             nativeBuildInputs = [ hugo ];
@@ -103,7 +106,7 @@
             name = "jnsgruk";
             NIX_CONFIG = "experimental-features = nix-command flakes";
             nativeBuildInputs = with pkgs; [
-              go_1_21
+              go_1_22
               go-tools
               gofumpt
               gopls
