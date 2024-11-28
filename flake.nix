@@ -37,7 +37,7 @@
             pname = "jnsgruk";
             src = lib.cleanSource ./.;
 
-            vendorHash = "sha256-TmnzMEOvl9ExLyophuJPPZKJtARnG4TTpyKyvefzJS0=";
+            vendorHash = "sha256-o5RY4sAxqW/tFVSVb1SdCr2QFo4LLYITA2yyQasUYmE=";
 
             buildInputs = [ cacert ];
             nativeBuildInputs = [ hugo ];
