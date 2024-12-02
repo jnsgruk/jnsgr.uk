@@ -20,6 +20,8 @@ coverAlt: |
   A dimly lit, post apocalyptic scene at twilight. A pile of computers are on fire in the
   foreground, there are a few people walking around all wearing VR goggles looking dazed and
   Ferris the crab is both massive, and looking solemnly into the camera.
+aliases:
+  - /2024/11/experiments-with-rust-nix-k6-parca/
 ---
 
 ## Introduction
