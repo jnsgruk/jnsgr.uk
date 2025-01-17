@@ -17,6 +17,8 @@ tags:
 layout: post
 ---
 
+> **Update**: Since I wrote this post, I have been made aware of a particular situation where, at the time I write this (2025-01-17), the steps described in this article will result in a setup that is still (in many cases) vulnerable to an attack where the attacker has physical access to the machine. This may be acceptable in your threat model, but I'd encourage you to read the [excellent article](https://oddlama.org/blog/bypassing-disk-encryption-with-tpm2-unlock/) to gain a full understanding of the issue.
+
 ## Introduction
 
 For the last decade (whoa...) or so, I've defaulted to using LUKS-encrypted drives for my machines. In general, I configure an unencrypted boot/EFI partition, then place either an ext4 or btrfs filesystem inside a LUKS container which is used for the root partition.
