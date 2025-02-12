@@ -19,26 +19,30 @@ I'm heavily motivated by hard technical problems for good causes.
 
 #### VP Engineering <span style="color:#999; margin-left: 10px; font-weight: 400;">May 21 - Present</span>
 
-As VP Engineering (Enterprise Solutions), I lead the development of [Juju] and the ecosystem of
-[charms] that deliver an enterprise-grade data platform, observability platform, machine learning
-operations platform and more. I also lead the Starcraft team, responsible for the delivery of
-Canonical's "craft" tooling (snapcraft, charmcraft, rockcraft, etc.).
+In January 2025, I was appointed the VP Engineering for [Ubuntu] at [Canonical], assuming
+leadership of the Ubuntu Desktop, Server and Foundations teams. I wrote about this appointment and
+my thoughts on it in [Engineering Ubuntu For The Next 20 Years].
 
-My technical reach extends beyond my own projects as a trusted advisor to those my junior and
-senior. I'm frequently involved in engineering decisions behind Ubuntu, LXD, MAAS, Multipass and
-Canonical Kubernetes.
+Prior to that, I was VP Engineering for Charm Engineering, leading the development of [Juju] and
+the ecosystem of [charms] that deliver an enterprise-grade data platform, observability platform,
+machine learning operations platform and more. I also lead the Starcraft team, responsible for the
+delivery of Canonical's "craft" tooling (snapcraft, charmcraft, rockcraft, etc.).
+
+My reach extends beyond my own projects as a trusted advisor to those my junior and
+senior. I'm frequently involved in engineering decisions behind snapd, LXD, MAAS, Multipass and
+Canonical Kubernetes. I'm also frequntly sought out as a mentor or coach for ICs and managers alike.
 
 My day-to-day focus is on the development of the directors, managers and senior ICs in my
-organisation that enables them to move confidently and autonomously. I have grown the organisation
-from around 25 to almost 100 in a little over two years, while maintaining high engagement across
-the board.
+organisation that enables them to move confidently and autonomously. I grew Charm Engineering from
+around 25 to over 100 in three years, maintaining high engagement across the board.
 
 Outside of my product engineering responsibilities, I authored and rolled out a new employee
 levelling framework and promotion process company wide throughout 2023.
 
 I conceived and authored the Canonical Leadership Academy - a six-month course comprising a
 handbook, weekly Google Meet seminars and a workbook aimed at developing leaders across the company
-to drive their teams more effectively and sustainably. The first cohort began in Nov 2023.
+to drive their teams more effectively and sustainably. The first cohort began in Nov 2023, and
+repeats every six months.
 
 #### Product Lead <span style="color:#999; margin-left: 10px; font-weight: 400;">Mar 21 - May 21</span>
 
@@ -106,3 +110,5 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [MWR InfoSecurity]: https://www.linkedin.com/company/mwr-infosecurity
 [ISC2]: https://www.isc2.org/certifications/cissp
 [IET]: https://www.theiet.org/career/professional-registration/chartered-engineer/
+[Ubuntu]: https://ubuntu.com
+[Engineering Ubuntu For The Next 20 Years]: https://jnsgr.uk/2025/02/engineering-ubuntu-for-the-next-20-years/
