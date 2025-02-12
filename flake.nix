@@ -106,15 +106,18 @@
             name = "jnsgruk";
             NIX_CONFIG = "experimental-features = nix-command flakes";
             nativeBuildInputs = with pkgs; [
-              go_1_22
+              flyctl
               go-tools
+              go_1_22
               gofumpt
               gopls
               hugo
-              flyctl
-              zsh
+              nil
+              nixfmt-rfc-style
+              nodePackages_latest.prettier
+              taplo
+              yaml-language-server
             ];
-            shellHook = "exec zsh";
           };
         }
       );
