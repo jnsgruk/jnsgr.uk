@@ -18,9 +18,7 @@ coverAlt: |
   The Ubuntu 24.10 (Oracular Oriole) wallpaper.
 ---
 
-{{< alert "circle-info" >}}
-This article was originally posted [on the Ubuntu Discourse](https://discourse.ubuntu.com/t/engineering-ubuntu-for-the-next-20-years/55000), and is reposted here. I welcome comments and further discussion in that thread.
-{{< /alert >}}
+> This article was originally posted [on the Ubuntu Discourse](https://discourse.ubuntu.com/t/engineering-ubuntu-for-the-next-20-years/55000), and is reposted here. I welcome comments and further discussion in that thread.
 
 ## Introduction
 
