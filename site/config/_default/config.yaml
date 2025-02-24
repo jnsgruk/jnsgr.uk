@@ -3,7 +3,9 @@ baseURL: "https://jnsgr.uk"
 defaultContentLanguage: en
 
 enableRobotsTXT: true
-paginate: 15
+pagination:
+  pagerSize: 15
+
 summaryLength: 0
 
 outputs:
