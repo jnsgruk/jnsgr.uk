@@ -47,7 +47,7 @@ There may be occasions when people need to get hold of you _right now_, and you 
 
 There are two kinds of focus time I need in my day: one to triage emails and messages, respond to "new tasks" and another to progress "planned work".
 
-Like many others, I get a lot of email and instant messages. Because of the global nature of my company, these tend to keep coming overnight. I like to set aside 30 minutes every morning assigned to "Catch Up". In that time, I respond to emails and messages I've received overnight, review my schedule for the rest of the day, and set up [Obsidian](https://obsidian.md) for note-taking (see [How I Computer in 2024](http://localhost:1313/2024/07/how-i-computer-in-2024/#productivity-apps)). As a side-effect of this, I'm always up to date by the time I start my first meeting each day.
+Like many others, I get a lot of email and instant messages. Because of the global nature of my company, these tend to keep coming overnight. I like to set aside 30 minutes every morning assigned to "Catch Up". In that time, I respond to emails and messages I've received overnight, review my schedule for the rest of the day, and set up [Obsidian](https://obsidian.md) for note-taking (see [How I Computer in 2024](https://jnsgr.uk/2024/07/how-i-computer-in-2024/#productivity-apps)). As a side-effect of this, I'm always up to date by the time I start my first meeting each day.
 
 For planned work, I set aside at least one hour per day. This is often neglected, leading to people becoming overwhelmed by meetings: group meetings, team 1:1s, daily/weekly/fortnightly/monthly rituals, leadership meetings, etc. Before long, there's no slack in their day to actually _think_ about their work.
 
