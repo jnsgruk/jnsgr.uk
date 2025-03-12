@@ -137,7 +137,7 @@ I'm going to do some more digging on [`sudo-rs`](https://github.com/trifectatech
 
 ## Summary
 
-I'm really excited to see so much investment in the foundational utilities behind Linux. The uutils project seems to be picking up speed after their recent [appearance at FOSDEM 2025], with efforts ongoing to rework [procps](https://github.com/uutils/procps), [util-linux](https://github.com/uutils/util-linux) and more.
+I'm really excited to see so much investment in the foundational utilities behind Linux. The uutils project seems to be picking up speed after their recent [appearance at FOSDEM 2025](https://fosdem.org/2025/schedule/event/fosdem-2025-6196-rewriting-the-future-of-the-linux-essential-packages-in-rust-/), with efforts ongoing to rework [procps](https://github.com/uutils/procps), [util-linux](https://github.com/uutils/util-linux) and more.
 
 The `sudo-rs` project is now maintained by the [Trifecta Tech Foundation](https://trifectatech.org/), who are focused on "open infrastructure software in the public interest" . Their [`zlib-rs`](https://github.com/trifectatechfoundation/zlib-rs) recently released v0.4.2, which appears to now be [the fastest API-compatible zlib implementation](https://trifectatech.org/blog/zlib-rs-is-faster-than-c/). They're also behind the [Pendulum Project](https://github.com/pendulum-project) and [`ntpd-rs`](https://github.com/pendulum-project/ntpd-rs) for memory-safe time synchronisation.
 
