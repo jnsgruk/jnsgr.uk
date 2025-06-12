@@ -20,7 +20,7 @@
         let
           inherit (pkgsForSystem system)
             buildEnv
-            buildGo122Module
+            buildGo124Module
             cacert
             dockerTools
             hugo
@@ -32,7 +32,7 @@
         {
           default = self.packages.${system}.jnsgruk;
 
-          jnsgruk = buildGo122Module {
+          jnsgruk = buildGo124Module {
             inherit version;
             pname = "jnsgruk";
             src = lib.cleanSource ./.;
@@ -108,7 +108,7 @@
             nativeBuildInputs = with pkgs; [
               flyctl
               go-tools
-              go_1_22
+              go_1_24
               gofumpt
               gopls
               hugo
