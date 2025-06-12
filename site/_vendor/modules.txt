@@ -1,1 +1,1 @@
-# github.com/jpanther/congo/v2 v2.8.2
+# github.com/jnsgruk/congo/v2 v2.0.0-20250612082515-d19ca8718937

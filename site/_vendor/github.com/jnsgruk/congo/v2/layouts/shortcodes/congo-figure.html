@@ -1,0 +1,32 @@
+{{ if .Get "default" }}
+  {{ template "_shortcodes/figure.html" . }}
+{{ else }}
+  {{ $url := urls.Parse (.Get "src") }}
+  {{ $altText := .Get "alt" }}
+  {{ $caption := .Get "caption" }}
+  {{ $href := .Get "href" }}
+  {{ $class := default "mx-auto my-0 rounded-md" (.Get "class") }}
+
+  {{ $file := $url.Path }}
+  {{ $img := .Page.Resources.GetMatch $file }}
+  {{- if and (not $img) .Page.File }}
+    {{ $path := path.Join .Page.File.Dir $file }}
+    {{ $img = resources.Get $path }}
+  {{ end -}}
+
+  <!-- prettier-ignore -->
+  <figure{{ with $class }} class="{{ . }}"{{ end }}>
+    {{ with $href }}<a href="{{ . }}">{{ end }}
+
+    {{- with $img -}}
+      {{ $lazy := $.Page.Site.Params.enableImageLazyLoading | default true }}
+      {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
+      {{ partial "picture.html" (dict "img" . "alt" $altText "class" $class "lazy" $lazy "webp" $webp) }}
+    {{- else -}}
+      <img src="{{ $url.String }}" alt="{{ $altText }}" class="{{ $class }}"/>
+    {{- end -}}
+
+    {{ with $href }}</a>{{ end }}
+    {{ with $caption }}<figcaption class="text-center">{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
+{{ end }}
