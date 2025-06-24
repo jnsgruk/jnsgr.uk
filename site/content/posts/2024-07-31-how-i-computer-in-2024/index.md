@@ -14,6 +14,8 @@ layout: post
 cover: 06.png
 ---
 
+> Since writing this post, I've posted [an update](https://jnsgr.uk/2025/06/from-nixos-to-ubuntu/) about moving from NixOS to Ubuntu with more up to date content on my current setup.
+
 ## Introduction
 
 I'm always fascinated to see how people use their computers - which applications they choose, how they set up their desktop environments and even how their screens are laid out on their desk. I've learned some great tricks from friends and colleagues over the years, so I thought I'd write up how I use my machines in 2024.
