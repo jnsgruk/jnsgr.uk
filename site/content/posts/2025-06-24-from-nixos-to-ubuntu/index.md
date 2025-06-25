@@ -349,7 +349,7 @@ I thoroughly enjoyed my adventures with Nix, and I consider having learned how t
 
 Even *if* I were to never touch Nix again, the general packaging and distribution engineering skills I learned have been invaluable, and I'm grateful to everyone who helped me on that journey through Matrix chats, Pull Requests and Mastodon interactions.
 
-I remain active on the ~35 packages in [`nixpkgs`](https://github.com/NixOS/nixpkgs) for which I'm the maintainer. I continue to use Nix for development shells, CI and for certain packages on my Ubuntu machines. I have archived my [flake](https://github.com/jnsgruk/nixos-config) for now because it's not being maintained, but I've left it there in case there are any patterns that might are useful for others.
+I remain active on the ~35 packages in [`nixpkgs`](https://github.com/NixOS/nixpkgs) for which I'm the maintainer. I continue to use Nix for development shells, CI and for certain packages on my Ubuntu machines. I have archived my [flake](https://github.com/jnsgruk/nixos-config) for now because it's not being maintained, but I've left it there in case there are any patterns that might be useful for others.
 
 ## Summary
 
