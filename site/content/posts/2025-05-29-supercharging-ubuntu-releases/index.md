@@ -45,9 +45,9 @@ The Ubuntu Release Team is a crowd of seasoned Ubuntu veterans who have been ste
 To aid the Canonical team in their understanding of the existing processes, and the immovable requirements that sit beneath it, we're introducing monthly snapshot releases for Ubuntu. These will not be fully-fledged releases of Ubuntu, but rather curated, testable milestones from our development stream. For the 25.10 (Questing Quokka) cycle, you can expect the following [release schedule](https://discourse.ubuntu.com/t/questing-quokka-release-schedule/36462):
 
 - **May 29, 2025**: Questing Quokka - Snapshot 1
-- **June 10, 2025**: Questing Quokka - Snapshot 2
-- **July 15, 2025**: Questing Quokka - Snapshot 3
-- **August 19, 2025**: Questing Quokka - Snapshot 4
+- **June 26, 2025**: Questing Quokka - Snapshot 2
+- **July 31, 2025**: Questing Quokka - Snapshot 3
+- **August 28, 2025**: Questing Quokka - Snapshot 4
 - **September 18, 2025**: Questing Quokka - Beta
 - **October 9, 2025**: Questing Quokka - Final Release
 
