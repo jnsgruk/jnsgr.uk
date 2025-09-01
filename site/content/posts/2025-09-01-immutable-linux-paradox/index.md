@@ -118,7 +118,7 @@ Nix packages, and therefore NixOS, eschews the traditional [Unix FHS](https://en
 
 The Nix store also (mostly) enables the building and switching of generations without a reboot. Updates are atomic: new generations must build completely before they can be activated. The [`home-manager`](https://github.com/nix-community/home-manager) project extends these concepts to the user environment and dotfile management.
 
-The [`impermanace`](https://github.com/nix-community/impermanence) project requires that every persistent directory is explicitly labelled, or else it's deleted on every reboot, forcing the base OS to be rebuilt from the Nix store and system configuration - essentially "enforcing" core system immutability between reboots. This was inspired by blog posts "[Erase Your Darlings](https://grahamc.com/blog/erase-your-darlings/)" and "[NixOS tmpfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)", which are worth a read, too!
+The [`impermanence`](https://github.com/nix-community/impermanence) project requires that every persistent directory is explicitly labelled, or else it's deleted on every reboot, forcing the base OS to be rebuilt from the Nix store and system configuration - essentially "enforcing" core system immutability between reboots. This was inspired by blog posts "[Erase Your Darlings](https://grahamc.com/blog/erase-your-darlings/)" and "[NixOS tmpfs as root](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)", which are worth a read, too!
 
 ### Ubuntu Core
 
