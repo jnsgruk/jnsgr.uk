@@ -19,7 +19,7 @@ coverAlt: |
   The "Resolute Raccoon" in a space scene.
 ---
 
-> This article was originally posted [on the Ubuntu Discourse](), and is reposted here. I welcome comments and further discussion in that thread.
+> This article was originally posted [on the Ubuntu Discourse](https://discourse.ubuntu.com/t/ubuntu-25-10-a-retrospective/69127), and is reposted here. I welcome comments and further discussion in that thread.
 
 ## Ubuntu 25.10: A Retrospective
 
