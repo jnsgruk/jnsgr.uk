@@ -4,3 +4,4 @@ site/resources/
 site/public
 .hugo_build.lock
 result*
+.direnv/
