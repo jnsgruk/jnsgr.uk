@@ -1,0 +1,22 @@
+# Jon Seager
+
+> Personal blog and portfolio of Jon Seager, VP Engineering for Ubuntu at Canonical.
+> Writing about Ubuntu, Linux, open source, Nix, software engineering, and leadership.
+
+Jon is a technical leader and software engineer working for Canonical as VP Engineering.
+His primary focus is leading the development of Ubuntu and Juju. In his own time, he's a
+keen open source software advocate with a long history of tinkering with the Linux desktop.
+
+This site is built with Go, Hugo, and Nix. The source is available on GitHub:
+https://github.com/jnsgruk/jnsgr.uk
+
+## Pages
+
+- [Curriculum Vitae]({{ "cv/index.md" | absURL }}): Jon's professional experience, career history, education, and contact details
+
+## Blog Posts
+{{ range where .Site.RegularPages "Section" "posts" }}
+{{- $md := .OutputFormats.Get "markdown" -}}
+{{- $summary := "" }}{{ with .Params.summary }}{{ $summary = replaceRE `\s*\n\s*` " " (strings.TrimRight "\n" .) }}{{ end -}}
+- [{{ .Title }}]({{ $md.Permalink }}){{ with $summary }}: {{ . }}{{ end }}
+{{ end }}

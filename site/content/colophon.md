@@ -1,6 +1,8 @@
 ---
 title: Meta
 layout: "simple"
+outputs:
+  - HTML
 ---
 
 This site is built using [Go], [Hugo] and [Nix].

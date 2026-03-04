@@ -8,11 +8,37 @@ pagination:
 
 summaryLength: 0
 
+mediaTypes:
+  text/markdown:
+    suffixes:
+      - md
+
+outputFormats:
+  markdown:
+    mediaType: text/markdown
+    isPlainText: true
+    notAlternative: true
+    permalinkable: true
+  llmstxt:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+    notAlternative: true
+
 outputs:
   home:
     - HTML
     - RSS
     - JSON
+    - markdown
+    - llmstxt
+  section:
+    - HTML
+    - RSS
+    - markdown
+  page:
+    - HTML
+    - markdown
 
 frontmatter:
   date:
