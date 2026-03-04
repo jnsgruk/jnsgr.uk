@@ -17,7 +17,7 @@ I'm heavily motivated by hard technical problems for good causes.
 
 ### [Canonical]
 
-#### VP Engineering <span style="color:#999; margin-left: 10px; font-weight: 400;">May 21 - Present</span>
+#### VP Engineering - _May 21 - Present_
 
 In January 2025, I was appointed the VP Engineering for [Ubuntu] at [Canonical], assuming
 leadership of the Ubuntu Desktop, Server and Foundations teams. I wrote about this appointment and
@@ -30,7 +30,7 @@ delivery of Canonical's "craft" tooling (snapcraft, charmcraft, rockcraft, etc.)
 
 My reach extends beyond my own projects as a trusted advisor to those my junior and
 senior. I'm frequently involved in engineering decisions behind snapd, LXD, MAAS, Multipass and
-Canonical Kubernetes. I'm also frequntly sought out as a mentor or coach for ICs and managers alike.
+Canonical Kubernetes. I'm also frequently sought out as a mentor or coach for ICs and managers alike.
 
 My day-to-day focus is on the development of the directors, managers and senior ICs in my
 organisation that enables them to move confidently and autonomously. I grew Charm Engineering from
@@ -44,7 +44,7 @@ handbook, weekly Google Meet seminars and a workbook aimed at developing leaders
 to drive their teams more effectively and sustainably. The first cohort began in Nov 2023, and
 repeats every six months.
 
-#### Product Lead <span style="color:#999; margin-left: 10px; font-weight: 400;">Mar 21 - May 21</span>
+#### Product Lead - _Mar 21 - May 21_
 
 - Led the design and delivery of features across functional teams.
 - Worked closely with CEO & CTO to evolve technical strategy for Juju and charms.
@@ -57,7 +57,7 @@ repeats every six months.
 
 ### [Thales UK]
 
-#### Technical Solutions Architect <span style="color:#999; margin-left: 10px; font-weight: 400;">2019-2021</span>
+#### Technical Solutions Architect - _2019-2021_
 
 - Proposed, designed and delivered a multi-tenant, cloud-native development platform on Microsoft
   Azure, delivered through extensive use of infrastructure-as-code and automation.
@@ -71,7 +71,7 @@ repeats every six months.
 
 ### [British Army]
 
-#### Captain <span style="color:#999; margin-left: 10px; font-weight: 400;">2013-2019</span>
+#### Captain - _2013-2019_
 
 - Architected and built multiple high-end bespoke Electronic Surveillance capabilities.
 - Created a small start-up programme with a culture of disruptive innovation.
@@ -81,7 +81,7 @@ repeats every six months.
 
 ### [MWR InfoSecurity]
 
-#### Internship <span style="color:#999; margin-left: 10px; font-weight: 400;">Jun 12 - Oct 12</span>
+#### Internship - _Jun 12 - Oct 12_
 
 - Four month internship as Ruby on Rails applications developer
 - Delivered a robust, modern internal messaging and information sharing system
