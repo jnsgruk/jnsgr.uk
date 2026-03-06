@@ -10,6 +10,6 @@ strategy across the board.
 
 In my own time, I'm a keen open source software advocate with long history of tinkering with the
 Linux desktop. I'm an insufferable petrolhead and a self-professed connoisseur of mountain bikes,
-coffee, and Mexican food.
+[coffee](https://coffee.jnsgr.uk), and Mexican food.
 
 I live with my wife and son in Bristol, UK.
