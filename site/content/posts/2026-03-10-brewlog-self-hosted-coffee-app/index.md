@@ -47,7 +47,7 @@ Brews are coffees I’ve made myself. Each brew is logged against a specific bag
 
 [![detail of a specific brew in the application](04.png)](04.png)
 
-Finally, brewlog tracks cafes I've visited, and "cups" which are coffees I've enjoyed, but not brewed myself.
+Finally, brewlog tracks cafes I've visited, and "cups," which are coffees I've enjoyed, but not brewed myself.
 
 The fun part is the pretty extensive stats page, which shows an interactive map of where my coffees are grown, roasted and drunk, as well as stats like common flavour notes and brew times.
 
@@ -79,7 +79,7 @@ I wanted the app to feel modern, but keep much of the rendering server-side. I d
 
 More recently I became aware of [Datastar](https://data-star.dev/). Datastar occupies a similar space to [HTMX](https://htmx.org/) in that it enables server-driven interactivity without writing much JavaScript, but it's newer and in my opinion results in slightly cleaner templates. Where HTMX swaps HTML fragments, Datastar adds a reactive signal system and can patch both HTML and JSON data from the server.
 
-When the agent regressed to vanilla fetch calls, or more manual Javascript DOM manipulation I treated that as a hole in my instructions, not the model, and [updated](https://github.com/jnsgruk/brewlog/blob/main/CLAUDE.md#gotchas) CLAUDE.md to reinforce the server‑driven Datastar pattern and prevent the agent making the same mistake again.
+Occasionally, the agent regressed to vanilla fetch calls or more manual Javascript DOM manipulation. I treated that as a hole in my instructions, not the model, and [updated](https://github.com/jnsgruk/brewlog/blob/main/CLAUDE.md#gotchas) CLAUDE.md to reinforce the server‑driven Datastar pattern and prevent the agent making the same mistake again.
 
 ### Single User, No Passwords
 
@@ -156,7 +156,7 @@ I'm also more inclined toward a stricter, more pedantic set of lints to enforce 
 
 If you care about architectural constraints (function length, etc.), encode them as lints rather than hoping the agent internalises your preferences.
 
-I'd never used [flake-parts](https://flake.parts) before, but it's ability to automatically configure pre-commit hooks and formatting tools like [treefmt](https://treefmt.com/latest/) in the Nix dev shell is really slick, and is something I will probably adopt going forward.
+I'd never used [flake-parts](https://flake.parts) before, but its ability to automatically configure pre-commit hooks and formatting tools like [treefmt](https://treefmt.com/latest/) in the Nix dev shell is really slick, and is something I will probably adopt going forward.
 
 ### Self-updating instructions
 
@@ -174,7 +174,7 @@ While some of the code in this project lacks the same attention to detail I migh
 
 I was pleasantly surprised about what the process taught me. There are some software patterns in brewlog which I have known about, studied and designed into applications before, but not built myself. I reviewed most of the code going into the app, and the process of reviewing the code, iterating on it while building these patterns and eventually settling on the implementation taught me a lot, and I feel more informed about the trade-offs.
 
-Brewlog is live at [coffee.jnsgr.uk](https://coffee.jnsgr.uk) and runs comfortably on a free-tier instance on [fly.io](https://fly.io/), and I’ve been using it every day for the past month.
+Brewlog is live at [coffee.jnsgr.uk](https://coffee.jnsgr.uk) and runs comfortably on a free-tier instance on [fly.io](https://fly.io/).
 
 If you’re into speciality coffee and like owning your data, give it a try and let me know how you get on.
 
