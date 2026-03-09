@@ -20,7 +20,7 @@
         let
           inherit (pkgsForSystem system)
             buildEnv
-            buildGo124Module
+            buildGo126Module
             cacert
             dockerTools
             hugo
@@ -32,7 +32,7 @@
         {
           default = self.packages.${system}.jnsgruk;
 
-          jnsgruk = buildGo124Module {
+          jnsgruk = buildGo126Module {
             inherit version;
             pname = "jnsgruk";
             src = lib.cleanSource ./.;
@@ -46,11 +46,11 @@
             # the revision from the flake.
             postPatch = ''
               substituteInPlace ./site/layouts/shortcodes/gitinfo.html \
-                --replace "{{ .Page.GitInfo.Hash }}" "${rev}" \
-                --replace "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
+                --replace-fail "{{ .Page.GitInfo.Hash }}" "${rev}" \
+                --replace-fail "{{ .Page.GitInfo.AbbreviatedHash }}" "${version}"
 
               substituteInPlace ./site/config/_default/config.yaml \
-                --replace "enableGitInfo: true" "enableGitInfo: false"
+                --replace-fail "enableGitInfo: true" "enableGitInfo: false"
             '';
 
             # Generate the Hugo site before building the Go application which embeds the
@@ -108,12 +108,12 @@
             nativeBuildInputs = with pkgs; [
               flyctl
               go-tools
-              go_1_24
+              go_1_26
               gofumpt
               gopls
               hugo
               nil
-              nixfmt-rfc-style
+              nixfmt
               nodePackages_latest.prettier
               taplo
               yaml-language-server
