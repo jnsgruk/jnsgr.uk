@@ -128,8 +128,8 @@
     <meta http-equiv="refresh" content="0; url={{ . }}" />
   {{ end }}
   {{/* Social */}}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
+  {{ partial "opengraph.html" . }}
+  {{ partial "twitter_cards.html" . }}
   {{/* Schema */}}
   {{ partial "schema.html" . }}
   {{/* Me */}}

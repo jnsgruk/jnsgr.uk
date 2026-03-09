@@ -1,4 +1,4 @@
-/*! Congo v2.12.2 | MIT License | https://github.com/jpanther/congo */
+/*! Congo v2.13.0 | MIT License | https://github.com/jpanther/congo */
 
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -108,7 +108,7 @@
   --tw-contain-style:  ;
 }
 
-/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -770,7 +770,7 @@ video {
   font-weight: 600;
   font-family: inherit;
   color: var(--tw-prose-kbd);
-  box-shadow: 0 0 0 1px rgb(var(--tw-prose-kbd-shadows) / 10%), 0 3px 0 rgb(var(--tw-prose-kbd-shadows) / 10%);
+  box-shadow: 0 0 0 1px var(--tw-prose-kbd-shadows), 0 3px 0 var(--tw-prose-kbd-shadows);
   font-size: 0.9rem;
   border-radius: 0.25rem;
   padding-top: 0.1875em;
@@ -935,7 +935,7 @@ video {
   --tw-prose-quote-borders: rgba(var(--color-primary-200), 1);
   --tw-prose-captions: rgba(var(--color-neutral-500), 1);
   --tw-prose-kbd: #111827;
-  --tw-prose-kbd-shadows: 17 24 39;
+  --tw-prose-kbd-shadows: rgb(17 24 39 / 10%);
   --tw-prose-code: rgba(var(--color-secondary-700), 1);
   --tw-prose-pre-code: rgba(var(--color-neutral-700), 1);
   --tw-prose-pre-bg: rgba(var(--color-neutral-50), 1);
@@ -953,7 +953,7 @@ video {
   --tw-prose-invert-quote-borders: rgba(var(--color-primary-900), 1);
   --tw-prose-invert-captions: rgba(var(--color-neutral-400), 1);
   --tw-prose-invert-kbd: #fff;
-  --tw-prose-invert-kbd-shadows: 255 255 255;
+  --tw-prose-invert-kbd-shadows: rgb(255 255 255 / 10%);
   --tw-prose-invert-code: rgba(var(--color-secondary-400), 1);
   --tw-prose-invert-pre-code: rgba(var(--color-neutral-200), 1);
   --tw-prose-invert-pre-bg: rgba(var(--color-neutral-700), 1);

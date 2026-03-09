@@ -44,7 +44,14 @@
     defer
     src="{{ $katexRenderJS.Permalink }}"
     integrity="{{ $katexRenderJS.Data.Integrity }}"
-    onload="renderMathInElement(document.body);"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   // block
+        {left: '$$', right: '$$', display: true},     // block
+        {left: '\\(', right: '\\)', display: false},  // inline
+      ],
+      throwOnError : false
+    });"
   ></script>
   {{ $katexFonts := resources.Match "lib/katex/fonts/*" }}
   {{ range $katexFonts }}

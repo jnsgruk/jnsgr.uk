@@ -4,6 +4,7 @@ date: {{ .Date }}
 externalUrl: ""
 summary: ""
 showReadingTime: false
-_build:
+build:
   render: "never"
+  list: "local"
 ---
