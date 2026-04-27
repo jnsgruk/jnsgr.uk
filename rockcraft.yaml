@@ -21,6 +21,8 @@ parts:
     build-snaps:
       - go/1.26/stable
       - hugo/extended/stable
+    build-packages:
+      - git
     override-build: |
       COMMIT=$(git rev-parse --short HEAD)
       go generate ./...
