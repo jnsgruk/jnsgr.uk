@@ -1,0 +1,31 @@
+name: jnsgruk
+base: bare
+build-base: ubuntu@24.04
+adopt-info: jnsgruk
+summary: jnsgruk personal website
+description: jnsgruk personal website and blog
+
+platforms:
+  amd64:
+
+services:
+  jnsgruk:
+    override: replace
+    command: /usr/bin/jnsgruk
+    startup: enabled
+
+parts:
+  jnsgruk:
+    plugin: go
+    source: .
+    build-snaps:
+      - go/1.26/stable
+      - hugo/extended/stable
+    override-build: |
+      COMMIT=$(git rev-parse --short HEAD)
+      go generate ./...
+      go build -o ${CRAFT_PART_INSTALL}/usr/bin/jnsgruk -ldflags "-X main.commit=${COMMIT}" .
+      craftctl set version="${COMMIT}"
+    stage-packages:
+      - libc6_libs
+      - ca-certificates_data

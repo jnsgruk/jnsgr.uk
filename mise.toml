@@ -1,0 +1,24 @@
+[tools]
+go = "1.26"
+"go:golang.org/x/tools/gopls" = "latest"
+hugo-extended = "latest"
+flyctl = "latest"
+gofumpt = "latest"
+nodejs = "latest"
+prettier = "latest"
+
+[tasks.build]
+description = "Build the application"
+run = """
+COMMIT=$(git rev-parse --short HEAD)
+go generate ./...
+go build -o jnsgruk -ldflags "-X main.commit=${COMMIT}" .
+"""
+
+[tasks.generate]
+description = "Generate the Hugo site"
+run = "go generate ./..."
+
+[tasks.dev]
+description = "Run Hugo dev server"
+run = "hugo serve --bind 0.0.0.0 -s site -F "
