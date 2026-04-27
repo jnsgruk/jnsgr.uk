@@ -1,0 +1,16 @@
+name: Build
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build rock
+        uses: canonical/craft-actions/rockcraft-pack@main
