@@ -101,6 +101,7 @@ and senior ICs in my organisation that enables them to move confidently and auto
 I enjoy public speaking, and have been fortunate enough to have had a few opportunities to speak on
 a range of topics:
 
+- **May 2026**: [Patch Me If You Can] - _Linux Unplugged_
 - **Jan 2026**: [Rust Adoption At Scale] - _Rust Nation UK_
 - **Jan 2026**: [Ubuntu for AI Development] - _AI Native Dev_
 - **Nov 2025**: [Canonical with Jon Seager] - _Rust in Production_
@@ -139,6 +140,7 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [release process]: https://jnsgr.uk/2025/05/supercharging-ubuntu-releases/
 [development of upki]: https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/
 [Debcrafters]: https://jnsgr.uk/2025/06/introducing-debcrafters/
+[Patch Me If You Can]: https://linuxunplugged.com/665
 [Rust Adoption At Scale]: https://www.youtube.com/watch?v=WOA4GA8tAWA
 [Canonical with Jon Seager]: https://www.youtube.com/watch?v=y5-NINPyWZ4
 [Ubuntu for AI Development]: https://www.youtube.com/watch?v=0CYm-KCw7yY
