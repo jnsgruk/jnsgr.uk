@@ -1,5 +1,5 @@
 {{- with .Paginator }}
-  {{- $width := $.Site.Params.list.paginationWidth | default 1 }}
+  {{- $width := (int $.Site.Params.list.paginationWidth) | default 1 }}
   {{- $currentPageNumber := .PageNumber }}
   {{- if gt .TotalPages 1 }}
     {{- $start := math.Max 1 (sub .PageNumber $width) }}

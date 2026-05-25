@@ -16,6 +16,7 @@
         (and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0))
         (and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0))
         (.Params.showEdit | default (.Site.Params.article.showEdit | default false))
+        (.Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false))
       }}
         <div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
           {{ partial "article-meta.html" (dict "context" . "scope" "single") }}

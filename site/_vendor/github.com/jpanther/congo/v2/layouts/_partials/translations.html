@@ -23,34 +23,31 @@
           <div class="invisible w-full bg-transparent group-hover:visible"></div>
         {{ end }}
         <div
-          class="{{ if not (eq $dir "down") }} bottom-7 {{ end }} invisible absolute z-50 flex flex-col whitespace-nowrap rounded border border-neutral-300 bg-neutral text-start text-base shadow group-hover:visible ltr:right-0 rtl:left-0 dark:border-neutral-600 dark:bg-neutral-800"
+          class="{{ if not (eq $dir "down") }}
+            bottom-7
+          {{ end }} invisible absolute z-50 flex flex-col whitespace-nowrap rounded border border-neutral-300 bg-neutral text-start text-base shadow group-hover:visible dark:border-neutral-600 dark:bg-neutral-800 ltr:right-0 rtl:left-0"
         >
-          {{ $siteLanguages := site.Languages }}
-          {{ $pageLang := .Page.Lang }}
-          {{ range .Page.AllTranslations }}
-            {{ $translation := . }}
-            {{ range $siteLanguages }}
-              {{ if eq $translation.Lang .Lang }}
-                {{ $selected := false }}
-                <div class="flex flex-grow">
-                  {{ if eq $pageLang .Lang }}
-                    <a
-                      href="{{ cond hugo.IsMultihost $translation.Permalink $translation.Permalink }}"
-                      class="flex w-full items-center justify-between bg-primary-100 px-2 py-1 dark:bg-primary-900"
-                      >{{ .LanguageName }}<span
-                        class="ms-2 w-6 text-primary-600 dark:text-primary-400"
-                        >{{ partial "icon.html" "check" }}</span
-                      ></a
+          {{ $currentLang := .Site.Language }}
+          {{ with .Rotate "language" }}
+            {{ range . }}
+              <div class="flex flex-grow">
+                {{ if eq .Site.Language $currentLang }}
+                  <a
+                    href="{{ .Permalink }}"
+                    class="flex w-full items-center justify-between bg-primary-100 px-2 py-1 dark:bg-primary-900"
+                    >{{ .Site.Language.Label }}
+                    <span class="ms-2 w-6 text-primary-600 dark:text-primary-400"
+                      >{{ partial "icon.html" "check" }}</span
                     >
-                  {{ else }}
-                    <a
-                      href="{{ cond hugo.IsMultihost $translation.Permalink $translation.Permalink }}"
-                      class="w-full py-1 pe-10 ps-2 decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
-                      >{{ .LanguageName }}</a
-                    >
-                  {{ end }}
-                </div>
-              {{ end }}
+                  </a>
+                {{ else }}
+                  <a
+                    href="{{ .Permalink }}"
+                    class="w-full py-1 pe-10 ps-2 decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+                    >{{ .Site.Language.Label }}</a
+                  >
+                {{ end }}
+              </div>
             {{ end }}
           {{ end }}
         </div>

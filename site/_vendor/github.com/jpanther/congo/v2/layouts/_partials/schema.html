@@ -2,12 +2,13 @@
   {{- $scratchCtx := .scratch -}}
   {{- with .parent }}
     {{ partial "inline/breadcrumbData" (dict "scratch" $scratchCtx "parent" .Parent) }}
-    {{- $scratchCtx.Add "listItem" (slice (dict 
+    {{- $scratchCtx.Add "listItem" (slice (dict
       "@type" "ListItem"
       "position" ($scratchCtx.Get "count")
       "name" (.Title | humanize | title)
       "item" .Permalink
-    )) -}}
+      ))
+    -}}
     {{- $scratchCtx.Add "count" 1 -}}
   {{- end }}
 {{- end -}}
@@ -20,7 +21,7 @@
     "@id": "{{ (site.GetPage "/").Permalink | safeURL }}",
     "name": "{{ .Site.Title | safeJS }}",
     {{ with .Site.Params.description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
+    {{ with .Site.Language.Locale }}"inLanguage": "{{ . }}",{{ end }}
     "url": "{{ (site.GetPage "/").Permalink | safeURL }}",
     {{ with .Site.Params.keywords }}"keywords": {{ . }},{{ end }}
     "publisher" : {
@@ -40,7 +41,7 @@
     "headline": "{{ .Title | safeJS }}",
     {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
     {{ with .Summary }}"abstract": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
+    {{ with .Site.Language.Locale }}"inLanguage": "{{ . }}",{{ end }}
     "url" : "{{ .Permalink }}",
     "author" : {
       "@type": "Person",
@@ -59,33 +60,33 @@
     "mainEntityOfPage": "true",
     "wordCount": "{{ .WordCount }}"
   }
-  </script>
-  {{- /* Source: https://bullaki.com/projects/web-design/seo-with-hugo-5-breadcrumbs/ */}}
+  </script> {{- /* Source: https://bullaki.com/projects/web-design/seo-with-hugo-5-breadcrumbs/ */}}
   {{- $scratch := newScratch -}}
   {{- $scratch.Set "count" 1 -}}
   {{ partial "inline/breadcrumbData" (dict "scratch" $scratch "parent" .Parent) }}
 
   {{- with index (.GetTerms "categories") 0 -}}
-    {{- $scratch.Add "listItem" (slice (dict 
+    {{- $scratch.Add "listItem" (slice (dict
       "@type" "ListItem"
       "position" ($scratch.Get "count")
       "name" .LinkTitle
       "item" .Permalink
-    )) -}}
+      ))
+    -}}
     {{- $scratch.Add "count" 1 -}}
   {{- end }}
-  
-  
-  {{- $scratch.Add "listItem" (slice (dict 
+
+  {{- $scratch.Add "listItem" (slice (dict
     "@type" "ListItem"
     "position" ($scratch.Get "count")
     "name" (.Title | humanize | title)
-  )) -}}
-  
+    ))
+  -}}
+
   {{- $scratch.SetInMap "breadcrumb" "@context" "https://schema.org" -}}
   {{- $scratch.SetInMap "breadcrumb" "@type" "BreadcrumbList" -}}
   {{- $scratch.SetInMap "breadcrumb" "itemListElement" ($scratch.Get "listItem") -}}
-  
+
   <script type="application/ld+json">
     {{ $scratch.Get "breadcrumb" | jsonify (dict "prefix" " " "indent" "  ") | safeJS }}
   </script>

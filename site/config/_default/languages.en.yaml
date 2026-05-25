@@ -1,8 +1,8 @@
 title: Jon Seager
 
-languageCode: "en"
-languageName: "English"
-languageDirection: "ltr"
+locale: "en"
+label: "English"
+direction: "ltr"
 weight: 1
 
 params:
