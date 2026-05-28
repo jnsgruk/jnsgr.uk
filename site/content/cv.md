@@ -101,6 +101,7 @@ and senior ICs in my organisation that enables them to move confidently and auto
 I enjoy public speaking, and have been fortunate enough to have had a few opportunities to speak on
 a range of topics:
 
+- **May 2026**: [Ubuntu Summit 26.04 Opening] - _Ubuntu Summit_
 - **May 2026**: [Patch Me If You Can] - _Linux Unplugged_
 - **Jan 2026**: [Rust Adoption At Scale] - _Rust Nation UK_
 - **Jan 2026**: [Ubuntu for AI Development] - _AI Native Dev_
@@ -146,6 +147,7 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [Ubuntu for AI Development]: https://www.youtube.com/watch?v=0CYm-KCw7yY
 [High-Performing Remote Teams]: https://www.youtube.com/watch?v=LttkqlgC8Vo
 [Nix and NixOS Development Environments]: https://www.youtube.com/watch?v=9l-U2NwbKOc
+[Ubuntu Summit 26.04 Opening]: https://youtu.be/jvJo8bOT7Lk?si=BMlTGuCK3dyoQr8x
 [Ubuntu Summit 25.10 Opening]: https://youtu.be/gsy1UCuw_Pw?t=1586
 [Engineering The Future]: https://www.jupiterbroadcasting.com/show/linux-unplugged/636/
 [Ubuntu's Rusty Roadmap]: https://www.jupiterbroadcasting.com/show/linux-unplugged/607/
