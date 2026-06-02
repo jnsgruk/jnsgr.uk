@@ -3,7 +3,7 @@
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
-    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.Language.Locale }}
     {{/* https://github.com/jpanther/congo/issues/1149 */}}
     <language>{{.}}</language>{{end}}{{ with .Site.Language.Params.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Language.Params.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Language.Params.Author.email }}
