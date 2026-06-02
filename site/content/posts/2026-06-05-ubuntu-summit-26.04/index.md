@@ -26,6 +26,8 @@ coverAlt: |
   Ubuntu.
 ---
 
+> This article was originally posted [on the Ubuntu Discourse](https://discourse.ubuntu.com/t/ubuntu-summit-26-04-personal-highlights/83660), and is reposted here. I welcome comments and further discussion in that thread.
+
 Last week I attended [Ubuntu Summit 26.04](https://ubuntu.com/summit). Ubuntu Summit is Canonical's twice-yearly "showcase for innovative and ambitious" work across Ubuntu, open source, and the wider technology ecosystem.
 
 The format remained the same as the [Ubuntu Summit 25.10](https://jnsgr.uk/2025/11/ubuntu-summit-25/): a focused programme of talks, demos and community sessions, streamed for a wider audience. While many of the talks are anchored around Ubuntu or Canonical, this is not a requirement for submission.
