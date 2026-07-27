@@ -14,7 +14,7 @@ and Information Security.
 I'm heavily motivated by hard technical problems for good causes, and I like talking about it on
 stage whenever I get the opportunity.
 
-## Experience
+## Current Roles
 
 ### [Canonical]
 
@@ -57,6 +57,29 @@ and senior ICs in my organisation that enables them to move confidently and auto
   ([video](https://www.youtube.com/watch?v=yxeJX2WRYjg)).
 - Researched and authored technical style guides and implementation examples for [charms] built
   with [ops].
+
+### [University of Bristol]
+
+#### Honorary Senior Lecturer - _Aug 26 - Present_
+
+- Honorary Senior Lecturer in Computer Science.
+- Resulting from collaboration between Canonical and University of Bristol.
+- Co-supervision of a PhD concerning the automated, safe translation of C to Rust.
+
+### [Rust Foundation] 
+
+#### Board Member - _Apr 26 - Present_
+
+- Resulting from Canonical's Gold membership with the Rust Foundation.
+- Focused on topics such as crates.io security, Rust standard library and Rust Foundation strategy.
+
+### [Cortex]
+
+#### Adviser - _Nov 25 - Present_
+
+- Part-time adviser on technical architecture, product strategy and company direction.
+
+## Past Experience
 
 ### [Thales UK]
 
@@ -101,6 +124,8 @@ and senior ICs in my organisation that enables them to move confidently and auto
 I enjoy public speaking, and have been fortunate enough to have had a few opportunities to speak on
 a range of topics:
 
+- **Jul 2026**: [Why Canonical is Betting on Rust for Ubuntu] - _Francesco Ciulla_
+- **Jul 2026**: [Rust in Ubuntu] - _JetBrains Podcast_
 - **May 2026**: [Ubuntu Summit 26.04 Opening] - _Ubuntu Summit_
 - **May 2026**: [Patch Me If You Can] - _Linux Unplugged_
 - **Jan 2026**: [Rust Adoption At Scale] - _Rust Nation UK_
@@ -122,6 +147,9 @@ a range of topics:
 You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t.me/jnsgruk).
 
 [Canonical]: https://canonical.com
+[Cortex]: https://cortex-labs.ai
+[Rust Foundation]: https://rustfoundation.org/
+[University of Bristol]: https://www.bristol.ac.uk
 [ops]: https://github.com/canonical/operator
 [Juju]: https://juju.is
 [charms]: https://charmhub.io
@@ -156,3 +184,5 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [Juju & Charmed Operators: Past, Present and Future]: https://www.youtube.com/watch?v=j0TwKeTsqyI
 [Juju & Model Driven Operations: An Introduction]: https://www.youtube.com/watch?v=OYyNywmZVXM
 [How to build a Charmed Operator for Kubernetes]: https://www.youtube.com/watch?v=yxeJX2WRYjg&t=6914s
+[Rust in Ubuntu]: https://www.youtube.com/live/Doqwh1b4QyA
+[Why Canonical is Betting on Rust for Ubuntu]: https://www.youtube.com/watch?v=Tw-1DDODk9Q
