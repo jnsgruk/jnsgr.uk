@@ -14,7 +14,7 @@ tags:
   - Canonical
   - Linux
 layout: post
-cover: cover.png
+cover: cover.webp
 coverAlt: |
   The "Resolute Raccoon" in a space scene.
 ---

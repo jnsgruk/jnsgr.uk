@@ -14,7 +14,7 @@ tags:
   - Calendar
   - Blog
 layout: post
-cover: cover.png
+cover: cover.webp
 coverAlt: |
   A picture showing chaos and malfunction on the left, with a much transformed and
   more efficient calendar on the right, illustrating a transition from the unmanaged

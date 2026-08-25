@@ -13,7 +13,7 @@ tags:
   - Vision
   - Blog
 layout: post
-cover: cover.png
+cover: cover.webp
 coverAlt: |
   The Ubuntu 24.10 (Oracular Oriole) wallpaper.
 ---

@@ -1,6 +1,6 @@
 package main
 
-//go:generate hugo --minify -s site -d ../public
+//go:generate hugo --minify --cleanDestinationDir -s site -d ../public
 
 import (
 	"embed"

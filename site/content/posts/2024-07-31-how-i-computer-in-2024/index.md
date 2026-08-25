@@ -11,7 +11,7 @@ tags:
   - Hardware
   - Blog
 layout: post
-cover: 06.png
+cover: 06.webp
 ---
 
 > Since writing this post, I've posted [an update](https://jnsgr.uk/2025/06/from-nixos-to-ubuntu/) about moving from NixOS to Ubuntu with more up to date content on my current setup.
@@ -45,7 +45,7 @@ My main machine is a custom built desktop machine. It's in a sombre looking, all
 
 On my desk, you'll find a [57" Samsung G95NC Odessey Neo G9](https://www.samsung.com/uk/monitors/gaming/odyssey-neo-g9-g95nc-57-inch-240hz-curved-dual-uhd-ls57cg952nuxxu/) monitor mounted on a [gas spring arm](https://www.amazon.co.uk/gp/product/B0B73XXDP5/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1), which is the newest addition to my setup. For 5 years, I'd been running a pair of 27" [LG 27" UN850 4K](https://www.lg.com/us/monitors/lg-27un850-w-4k-uhd-led-monitor) monitors mounted on a dual monitor arm and had toyed with the idea of moving to an ultra-wide for a while. The Samsung display is the first I have found that doesn't compromise on resolution - it's the same resolution as my two LG monitors combined, but on a single panel. I must admit that I'm quite surprised how much of a productivity booster it is _not_ having the split down the middle.
 
-[![a photograph of my desk including a huge ultra-wide monitor](01.png)](01.png)
+[![a photograph of my desk including a huge ultra-wide monitor](01.webp)](01.webp)
 
 At the time of writing, I work for [Canonical](https://canonical.com) which is an all remote company. The combination of the company itself and my role as VP Engineering means I spend a good portion of my day on video calls. In my opinion, investing in a solid AV setup is a service to your colleagues, particularly where your role involves managing people. I'm currently running a [Sony ILME-FX3](https://www.sony.co.uk/interchangeable-lens-cameras/products/ilme-fx3-body---kit) with the standard [FE 28-70mm F3.5-5.6](https://www.sony.co.uk/electronics/camera-lenses/sel2870) lens, hooked up to an [Elgato Cam Link 4K](https://www.elgato.com/uk/en/p/cam-link-4k). For audio, I use a [RODE VideoMic GO II](https://rode.com/en/microphones/on-camera/videomic-go-ii) and a pair of [Audioengine A2+](https://audioengineeu.com/products/audioengine-a2-wireless-bluetooth-computer-speakers-60w-bluetooth-speaker-system-for-home-studio-gaming) speakers.
 
@@ -133,7 +133,7 @@ Absolutely everything is themed with [Catppuccin Macchiato](https://github.com/c
 
 You can see all the gory details of my Hyprland, waybar, rofi, mako, etc. [on Github](https://github.com/jnsgruk/nixos-config).
 
-[![screenshot of a very busy hyprland desktop with editors, browsers, etc.](07.png)](07.png)
+[![screenshot of a very busy hyprland desktop with editors, browsers, etc.](07.webp)](07.webp)
 
 ## Server / Homelab
 
