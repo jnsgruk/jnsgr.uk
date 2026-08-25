@@ -23,7 +23,7 @@ It also runs a few other small services - all of which are exclusively available
 
 There are certainly plenty of options; this seems to be a highly crowded space in the open source homelab world. I settled on the rather ambiguously named [homepage](https://gethomepage.dev). At the time of writing, my dashboard looks like so, though there are people who have been far more creative with the appearance!
 
-[![my dashboard](01.png)](01.png)
+[![my dashboard](01.webp)](01.webp)
 
 Naturally, I wanted to run this on NixOS, so in July 2023 I landed one of my early contributions to the project in the form of PR [#243094](https://github.com/NixOS/nixpkgs/pull/243094) which added the package (named `homepage-dashboard`), a basic NixOS module and a basic test.
 

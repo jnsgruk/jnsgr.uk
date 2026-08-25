@@ -13,7 +13,7 @@ tags:
   - Uses
   - Productivity
 layout: post
-cover: cover.jpg
+cover: cover.webp
 coverAlt: |
   A large snowflake against a dark background
 ---

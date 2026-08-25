@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if (( $# < 1 || $# > 2 )); then
+  echo "usage: mise run images:optimize -- SOURCE [DESTINATION]" >&2
+  exit 2
+fi
+
+source_image=$1
+destination=${2:-"${source_image%.*}.webp"}
+
+if [[ ! -f $source_image ]]; then
+  echo "image does not exist: $source_image" >&2
+  exit 1
+fi
+
+if [[ $source_image == "$destination" ]]; then
+  echo "destination must differ from source: $destination" >&2
+  exit 1
+fi
+
+if command -v magick >/dev/null 2>&1; then
+  convert_command=(magick)
+  identify_command=(magick identify)
+elif command -v convert >/dev/null 2>&1 && command -v identify >/dev/null 2>&1; then
+  convert_command=(convert)
+  identify_command=(identify)
+else
+  echo "ImageMagick is not available; run mise install" >&2
+  exit 1
+fi
+
+mkdir -p "$(dirname "$destination")"
+
+"${convert_command[@]}" "$source_image" \
+  -auto-orient \
+  -strip \
+  -resize '2640x2640>' \
+  -quality 90 \
+  -define webp:method=6 \
+  "$destination"
+
+dimensions=$("${identify_command[@]}" -ping -format '%wx%h' "$destination")
+size=$(du -h "$destination" | cut -f1)
+echo "wrote $destination ($dimensions, $size)"

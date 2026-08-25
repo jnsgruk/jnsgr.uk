@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+max_dimension=2640
+max_bytes=$((1536 * 1024))
+failed=false
+
+if command -v magick >/dev/null 2>&1; then
+  identify_command=(magick identify)
+elif command -v identify >/dev/null 2>&1; then
+  identify_command=(identify)
+else
+  echo "ImageMagick is not available; run mise install" >&2
+  exit 1
+fi
+
+while IFS= read -r -d '' image; do
+  dimensions=$("${identify_command[@]}" -ping -format '%w %h' "$image")
+  read -r width height <<< "$dimensions"
+  bytes=$(wc -c < "$image")
+
+  if (( width > max_dimension || height > max_dimension )); then
+    echo "$image is ${width}x${height}; maximum is ${max_dimension}px on either axis" >&2
+    failed=true
+  fi
+
+  if (( bytes > max_bytes )); then
+    echo "$image is $bytes bytes; maximum is $max_bytes bytes" >&2
+    failed=true
+  fi
+done < <(
+  find site/content -type f \
+    \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) \
+    -print0
+)
+
+if [[ $failed == true ]]; then
+  echo "optimize failing assets with: mise run images:optimize -- SOURCE [DESTINATION]" >&2
+  exit 1
+fi
+
+echo "content images satisfy the asset policy"

@@ -20,7 +20,7 @@ tags:
   - nptd-rs
   - chrony
 layout: post
-cover: cover.jpg
+cover: cover.webp
 coverAlt: |
   An ornate mechanical clock movement.
 ---

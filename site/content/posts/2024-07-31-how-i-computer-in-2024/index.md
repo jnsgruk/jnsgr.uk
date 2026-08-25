@@ -121,7 +121,7 @@ I've been a long-time user of [Alacritty](https://alacritty.org/) as a terminal 
 
 I mostly drive `git` from the command line, but I've recently taken to using [Sublime Merge](https://www.sublimemerge.com/) for complicated rebases, or where I want to stage lots of small hunks in files. I was a dedicated user of [Sublime Text](https://www.sublimetext.com/) for some years, but felt like it lagged behind Visual Studio Code on features after a while - despite being somewhat addicted to how lightning fast Sublime Text felt in comparison.
 
-[![visual studio code and sublime merge side-by-side](05.png)](05.png)
+[![visual studio code and sublime merge side-by-side](05.webp)](05.webp)
 
 ## OS / Desktop
 

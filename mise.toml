@@ -2,6 +2,7 @@
 go = "1.26"
 "go:golang.org/x/tools/gopls" = "latest"
 hugo-extended = "latest"
+imagemagick = "latest"
 flyctl = "latest"
 gofumpt = "latest"
 nodejs = "latest"
@@ -9,6 +10,7 @@ prettier = "latest"
 
 [tasks.build]
 description = "Build the application"
+depends = ["images:check"]
 run = """
 COMMIT=$(git rev-parse --short HEAD)
 go generate ./...
@@ -22,3 +24,11 @@ run = "go generate ./..."
 [tasks.dev]
 description = "Run Hugo dev server"
 run = "hugo serve --bind 0.0.0.0 -s site -F "
+
+[tasks."images:optimize"]
+description = "Convert a source image to an optimized WebP asset"
+run = "scripts/optimize-image"
+
+[tasks."images:check"]
+description = "Check content images against the asset policy"
+run = "scripts/check-images"

@@ -18,7 +18,7 @@ tags:
   - LLM
   - Agents
 layout: post
-cover: cover.jpg
+cover: cover.webp
 coverAlt: |
   An abstract image of brain and neural connections
 ---

@@ -19,7 +19,7 @@ tags:
   - Inference
   - LLMs
 layout: post
-cover: cover.jpg
+cover: cover.webp
 coverAlt: |
   Abstract purple "starburst" graphic.
 ---

@@ -12,5 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Install image tooling
+        uses: jdx/mise-action@v4
+        with:
+          install_args: imagemagick
+
+      - name: Check images
+        run: mise run images:check
+
       - name: Build rock
         uses: canonical/craft-actions/rockcraft-pack@main
