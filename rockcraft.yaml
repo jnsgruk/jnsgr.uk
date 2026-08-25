@@ -1,6 +1,6 @@
 name: jnsgruk
 base: bare
-build-base: ubuntu@24.04
+build-base: ubuntu@26.04
 adopt-info: jnsgruk
 summary: jnsgruk personal website
 description: jnsgruk personal website and blog
