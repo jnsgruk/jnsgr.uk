@@ -1,0 +1,18 @@
+{{- $markdown := .OutputFormats.Get "markdown" }}
+{{- $firstPage := true }}
+{{- if and $markdown (eq .Kind "section") }}
+  {{- $pages := .Pages }}
+  {{- if .Params.groupByYear | default (.Site.Params.list.groupByYear | default true) }}
+    {{- $pages = .Pages.GroupByDate "2006" }}
+  {{- end }}
+  {{- $firstPage = eq (.Paginate $pages).PageNumber 1 }}
+{{- end }}
+{{- if and $markdown $firstPage }}
+  <link
+    rel="alternate"
+    type="{{ $markdown.MediaType.Type }}"
+    href="{{ $markdown.RelPermalink }}"
+  />
+{{- end }}
+{{- $llms := "llms.txt" | relURL }}
+<link rel="describedby" href="{{ $llms }}" />
