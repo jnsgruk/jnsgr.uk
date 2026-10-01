@@ -124,6 +124,7 @@ and senior ICs in my organisation that enables them to move confidently and auto
 I enjoy public speaking, and have been fortunate enough to have had a few opportunities to speak on
 a range of topics:
 
+- **Sep 2026**: [Rust Adoption At Scale In Ubuntu] - _RustConf 2026_
 - **Jul 2026**: [Why Canonical is Betting on Rust for Ubuntu] - _Francesco Ciulla_
 - **Jul 2026**: [Rust in Ubuntu] - _JetBrains Podcast_
 - **May 2026**: [Ubuntu Summit 26.04 Opening] - _Ubuntu Summit_
@@ -186,3 +187,4 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [How to build a Charmed Operator for Kubernetes]: https://www.youtube.com/watch?v=yxeJX2WRYjg&t=6914s
 [Rust in Ubuntu]: https://www.youtube.com/live/Doqwh1b4QyA
 [Why Canonical is Betting on Rust for Ubuntu]: https://www.youtube.com/watch?v=Tw-1DDODk9Q
+[Rust Adoption At Scale In Ubuntu]: https://www.youtube.com/watch?v=X-_jLdNrufQ
