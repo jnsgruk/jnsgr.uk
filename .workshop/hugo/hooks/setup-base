@@ -1,0 +1,25 @@
+#!/bin/bash
+set -euo pipefail
+
+# The confined Hugo snap cannot read Workshop's /project mount.
+# Install the upstream extended binary outside snap confinement instead.
+case "$(dpkg --print-architecture)" in
+  amd64) architecture=amd64 ;;
+  arm64) architecture=arm64 ;;
+  *) echo "Unsupported Hugo architecture" >&2; exit 1 ;;
+esac
+
+release_url=$(curl -fsSL -o /dev/null -w '%{url_effective}' https://github.com/gohugoio/hugo/releases/latest)
+version=${release_url##*/v}
+archive="hugo_extended_${version}_linux-${architecture}.tar.gz"
+checksums="hugo_${version}_checksums.txt"
+download_dir=$(mktemp -d)
+trap 'rm -rf "$download_dir"' EXIT
+cd "$download_dir"
+release="https://github.com/gohugoio/hugo/releases/download/v${version}"
+curl -fsSL "$release/$archive" -o "$archive"
+curl -fsSL "$release/$checksums" -o "$checksums"
+sha256sum --check --ignore-missing "$checksums"
+tar -xzf "$archive" hugo
+install -m 0755 hugo /usr/local/bin/hugo
+/usr/local/bin/hugo version | grep -F '+extended'

@@ -15,13 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install image tooling
-        uses: jdx/mise-action@v5
+      - name: Launch Workshop
+        uses: canonical/launch-workshop@b538173e2c4163488c4628b4aef79a6002475e76 # v1
         with:
-          install_args: imagemagick
+          cache: go:mod-cache
 
       - name: Check images
-        run: mise run images:check
+        run: workshop run -- images-check
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v4
@@ -42,10 +42,7 @@ jobs:
             docker-daemon:ghcr.io/jnsgruk/jnsgr.uk:${TAG}
           docker push ghcr.io/jnsgruk/jnsgr.uk:${TAG}
 
-      - name: Setup flyctl
-        uses: superfly/flyctl-actions/setup-flyctl@master
-
       - name: Deploy to Fly.io
-        run: flyctl deploy -i "ghcr.io/jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)"
+        run: workshop exec --env FLY_ACCESS_TOKEN -- flyctl deploy -i "ghcr.io/jnsgruk/jnsgr.uk:$(git rev-parse --short HEAD)"
         env:
           FLY_ACCESS_TOKEN: ${{ secrets.FLY_API_TOKEN }}

@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+# Go and gopls are provided by the Store Go SDK.
+source /etc/profile.d/go.sh
+export GOBIN=/usr/local/bin
+go install mvdan.cc/gofumpt@latest
+
+/usr/local/bin/gofumpt -version

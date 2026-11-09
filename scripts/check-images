@@ -11,7 +11,7 @@ if command -v magick >/dev/null 2>&1; then
 elif command -v identify >/dev/null 2>&1; then
   identify_command=(identify)
 else
-  echo "ImageMagick is not available; run mise install" >&2
+  echo "ImageMagick is not available; run workshop refresh on the host, then run this script inside the workshop" >&2
   exit 1
 fi
 
@@ -36,7 +36,7 @@ done < <(
 )
 
 if [[ $failed == true ]]; then
-  echo "optimize failing assets with: mise run images:optimize -- SOURCE [DESTINATION]" >&2
+  echo "optimize failing assets with: workshop run -- images-optimize SOURCE [DESTINATION]" >&2
   exit 1
 fi
 

@@ -1,0 +1,46 @@
+name: jnsgruk
+base: ubuntu@26.04
+
+sdks:
+  - name: go
+    channel: 1.27/stable
+  - name: project-go-tools
+  - name: node
+    channel: 24/stable
+  - name: project-prettier
+  - name: project-hugo
+    slots:
+      hugo:
+        interface: tunnel
+        endpoint: localhost:1313
+  - name: project-imagemagick
+  - name: project-flyctl
+  - name: system
+    plugs:
+      hugo:
+        interface: tunnel
+        endpoint: localhost:1313
+
+connections:
+  - plug: system:hugo
+    slot: hugo:hugo
+
+actions:
+  build: |
+    set -euo pipefail
+    scripts/check-images
+    COMMIT=$(git rev-parse --short HEAD)
+    go generate ./...
+    go build -o jnsgruk -ldflags "-X main.commit=${COMMIT}" "$@" .
+  generate: |
+    set -euo pipefail
+    go generate "$@" ./...
+  dev: |
+    set -euo pipefail
+    hugo serve --bind 0.0.0.0 -s site -F "$@"
+  images-optimize: |
+    set -euo pipefail
+    scripts/optimize-image "$@"
+  images-check: |
+    set -euo pipefail
+    scripts/check-images

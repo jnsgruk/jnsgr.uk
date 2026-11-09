@@ -5,3 +5,5 @@ site/public
 .hugo_build.lock
 *.rock
 jnsgruk
+
+.workshop.lock

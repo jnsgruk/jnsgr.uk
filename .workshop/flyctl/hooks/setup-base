@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+installer=$(mktemp)
+trap 'rm -f "$installer"' EXIT
+curl -fsSL https://fly.io/install.sh -o "$installer"
+FLYCTL_INSTALL=/usr/local bash "$installer" --non-interactive
+
+/usr/local/bin/flyctl version

@@ -10,18 +10,32 @@ The site is hosted on [Fly.io](https://fly.io) and deployed automatically with G
 
 ## Building
 
-This project uses [mise](https://mise.jdx.dev/) for tool management and build tasks:
+This project uses [Canonical Workshop](https://github.com/canonical/workshop) for tool
+management and development actions. Install Workshop and configure LXD using the
+[setup guide](https://documentation.ubuntu.com/canonical-workshop/stable/tutorial/part-1-get-started/),
+then run:
 
 ```shell
-# Install tools
-mise install
+# Create the development environment
+workshop launch
 
-# Build the Go binary (includes Hugo site generation)
-mise run build
+# Build the Go binary (checks images and generates the Hugo site)
+workshop run -- build
 
 # Serve the Hugo site during development
-mise run dev
+workshop run -- dev
+
+# Generate the site without building the binary
+workshop run -- generate
 ```
+
+The Store Go SDK supplies Go 1.27 and gopls; the Store Node.js SDK supplies Node.js 24
+and npm. Small project SDKs in `.workshop/` install gofumpt, Prettier, Hugo extended,
+ImageMagick, and flyctl, each with its own setup
+hook. Hugo uses the upstream extended binary so it can access Workshop’s `/project` mount. Run `workshop refresh` on the host after changing SDK definitions or hooks.
+Use `workshop shell` for an interactive environment with these tools available.
+The Hugo tunnel exposes the dev server at `http://localhost:1313` on the host.
+Actions that accept arguments pass them through, for example `workshop run -- dev --disableFastRender`.
 
 The OCI image is built with [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/):
 
@@ -45,12 +59,12 @@ Use the image task before adding a new raster image to a post:
 
 ```shell
 # Writes image.webp alongside image.png, capped at 2640px and with metadata removed
-mise run images:optimize -- path/to/image.png
+workshop run -- images-optimize path/to/image.png
 
 # An explicit output path can be supplied when needed
-mise run images:optimize -- path/to/image.png path/to/cover.webp
+workshop run -- images-optimize path/to/image.png path/to/cover.webp
 ```
 
 Review the generated image, update the Markdown or `cover` front matter to reference it, then remove
-the original. `mise run images:check` validates dimensions and file sizes, and is also run
-automatically by `mise run build` and the GitHub workflows before Rockcraft packaging.
+the original. `workshop run -- images-check` validates dimensions and file sizes, and is also run
+automatically by `workshop run -- build` and the GitHub workflows before Rockcraft packaging.
