@@ -3,22 +3,21 @@ title: Curriculum Vitae
 layout: "simple"
 ---
 
-I'm an inspiring, motivated technical leader with excellent communication skills capable of
-building high-performing teams. I'm a true technologist with an energetic passion for open-source,
-security and the development of those around me.
+A charismatic product engineering leader with excellent communication skills and a proven track record
+of building high-performing engineering teams. My focus is on people, product strategy and technical
+leadership. I remain a highly skilled, hands-on software engineer across a broad spectrum of technologies.
 
-My focus is on technical leadership, but I'm a skilled software engineer that's not afraid to get
-my hands dirty. My primary area of technical expertise is in Linux, Kubernetes, cloud automation
-and Information Security.
+My primary area of technical expertise is in Linux and open source, but I've gained signficant experience
+with Kubernetes, cloud automation and security topics. 
 
-I'm heavily motivated by hard technical problems for good causes, and I like talking about it on
-stage whenever I get the opportunity.
+I'm motivated by hard technical problems for good causes, and I like talking about it on stage whenever
+I get the opportunity.
 
 ## Current Roles
 
 ### [Canonical]
 
-#### VP Engineering - _May 21 - Present_
+#### VP Engineering - _Jan 25 - Present_
 
 In January 2025, I was appointed the VP Engineering for [Ubuntu] at [Canonical], assuming leadership
 of the Ubuntu Desktop, Server, Foundations and [Debcrafters] teams. I wrote about this appointment
@@ -29,7 +28,7 @@ supported the design and [development of upki].
 
 My reach extends beyond my own projects as a trusted advisor to those my junior and senior. I work
 closely with the CEO, CTO and other leaders on a daily basis. I frequently lead engineering
-decisions behind snapd, LXD, MAAS, Multipass and Canonical Kubernetes. I'm frequently sought out to
+decisions behind snapd, LXD, MAAS and Canonical Kubernetes. I'm frequently sought out to
 mentor both individual contributors and leaders.
 
 My day-to-day focus is on the evolution of Ubuntu, and the development of the directors, managers
@@ -124,6 +123,8 @@ and senior ICs in my organisation that enables them to move confidently and auto
 I enjoy public speaking, and have been fortunate enough to have had a few opportunities to speak on
 a range of topics:
 
+#### 2026
+
 - **Nov 2026**: [Ubuntu’s Core Reset] - _Linux Unplugged_
 - **Sep 2026**: [Rust Adoption At Scale In Ubuntu] - _RustConf 2026_
 - **Jul 2026**: [Why Canonical is Betting on Rust for Ubuntu] - _Francesco Ciulla_
@@ -132,16 +133,28 @@ a range of topics:
 - **May 2026**: [Patch Me If You Can] - _Linux Unplugged_
 - **Jan 2026**: [Rust Adoption At Scale] - _Rust Nation UK_
 - **Jan 2026**: [Ubuntu for AI Development] - _AI Native Dev_
+
+#### 2025
+
 - **Nov 2025**: [Canonical with Jon Seager] - _Rust in Production_
 - **Oct 2025**: [Ubuntu Summit 25.10 Opening] - _Ubuntu Summit_
 - **Oct 2025**: [Engineering The Future] - _Linux Unplugged_
 - **Jun 2025**: [High-Performing Remote Teams] - _Nerding Out With Viktor_
 - **Mar 2025**: [Ubuntu's Rusty Roadmap] - _Linux Unplugged_
+
+#### 2024
+
 - **Mar 2024**: [How Hard Could It Be] - _Self Hosted_
 - **Jan 2024**: [Nix and NixOS Development Environments] - _Nerding Out With Viktor_
+
+#### 2022
+
 - **Nov 2022**: [Juju & Model Driven Operations: An Introduction] - _Ubuntu Summit_
 - **Nov 2022**: [Streamlining continuous profiling with snaps & charms] - _Ubuntu Summit_
 - **Nov 2022**: [Juju & Charmed Operators: Past, Present and Future] - _Ubuntu Summit_
+
+#### 2021
+
 - **May 2021**: [How to build a Charmed Operator for Kubernetes] - _Kubecon Operator Day_
 
 ## Contact
