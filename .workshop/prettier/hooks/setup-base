@@ -1,7 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-source /etc/profile.d/nodejs.sh
-npm install --global --prefix /usr/local prettier@latest
-
-/usr/local/bin/prettier --version

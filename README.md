@@ -29,8 +29,8 @@ workshop run -- dev
 workshop run -- generate
 ```
 
-The Store Go SDK supplies Go 1.27 and gopls; the Store Node.js SDK supplies Node.js 24
-and npm. Small project SDKs in `.workshop/` install gofumpt, Prettier, Hugo extended,
+The Store Go SDK supplies Go 1.27 and gopls.
+Small project SDKs in `.workshop/` install gofumpt, Hugo extended,
 ImageMagick, and flyctl, each with its own setup
 hook. Hugo uses the upstream extended binary so it can access Workshop’s `/project` mount. Run `workshop refresh` on the host after changing SDK definitions or hooks.
 Use `workshop shell` for an interactive environment with these tools available.

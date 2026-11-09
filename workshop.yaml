@@ -2,12 +2,10 @@ name: jnsgruk
 base: ubuntu@26.04
 
 sdks:
+  - name: codex
   - name: go
     channel: 1.27/stable
   - name: project-go-tools
-  - name: node
-    channel: 24/stable
-  - name: project-prettier
   - name: project-hugo
     slots:
       hugo:
