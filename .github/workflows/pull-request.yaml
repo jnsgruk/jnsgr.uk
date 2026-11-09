@@ -12,6 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Set up Rockcraft and LXD
+        uses: canonical/craft-actions/rockcraft/setup@main
+        with:
+          lxd-channel: 6/stable
+
       - name: Launch Workshop
         uses: canonical/launch-workshop@b538173e2c4163488c4628b4aef79a6002475e76 # v1
         with:
@@ -21,4 +26,4 @@ jobs:
         run: workshop run -- images-check
 
       - name: Build rock
-        uses: canonical/craft-actions/rockcraft-pack@main
+        uses: canonical/craft-actions/rockcraft/pack@main
