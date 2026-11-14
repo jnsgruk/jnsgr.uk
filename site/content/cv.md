@@ -125,6 +125,7 @@ a range of topics:
 
 #### 2026
 
+- **Nov 2026**: [Ubuntu Summit 26.10 Opening] - _Ubuntu Summit_
 - **Nov 2026**: [Ubuntu’s Core Reset] - _Linux Unplugged_
 - **Sep 2026**: [Rust Adoption At Scale In Ubuntu] - _RustConf 2026_
 - **Jul 2026**: [Why Canonical is Betting on Rust for Ubuntu] - _Francesco Ciulla_
@@ -191,6 +192,7 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [Ubuntu for AI Development]: https://www.youtube.com/watch?v=0CYm-KCw7yY
 [High-Performing Remote Teams]: https://www.youtube.com/watch?v=LttkqlgC8Vo
 [Nix and NixOS Development Environments]: https://www.youtube.com/watch?v=9l-U2NwbKOc
+[Ubuntu Summit 26.10 Opening]: https://youtu.be/p5U_ZAoT_qw
 [Ubuntu Summit 26.04 Opening]: https://youtu.be/jvJo8bOT7Lk?si=BMlTGuCK3dyoQr8x
 [Ubuntu Summit 25.10 Opening]: https://youtu.be/gsy1UCuw_Pw?t=1586
 [Engineering The Future]: https://www.jupiterbroadcasting.com/show/linux-unplugged/636/

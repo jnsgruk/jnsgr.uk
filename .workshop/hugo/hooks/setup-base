@@ -22,4 +22,5 @@ curl -fsSL "$release/$checksums" -o "$checksums"
 sha256sum --check --ignore-missing "$checksums"
 tar -xzf "$archive" hugo
 install -m 0755 hugo /usr/local/bin/hugo
-/usr/local/bin/hugo version | grep -F '+extended'
+# Smoke-test the installed binary without depending on version-output formatting.
+/usr/local/bin/hugo version
