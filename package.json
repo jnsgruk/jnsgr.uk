@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "wrangler": "4.162.0"
+  },
+  "packageManager": "npm@10.9.4",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "TZ=UTC hugo --environment production --clock \"$(git show -s --format=%cI HEAD)\" --minify --ignoreCache --cleanDestinationDir -s site -d ../public",
+    "dev": "hugo serve --bind 0.0.0.0 -s site -F",
+    "preview": "wrangler dev",
+    "check": "scripts/check-images && npm run build && wrangler deploy --dry-run --outdir build/dry-run",
+    "deploy": "wrangler deploy"
+  }
+}

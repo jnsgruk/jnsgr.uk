@@ -3,16 +3,14 @@ base: ubuntu@26.04
 
 sdks:
   - name: codex
-  - name: go
-    channel: 1.27/stable
-  - name: project-go-tools
+  - name: node
+    channel: 22/stable
   - name: project-hugo
     slots:
       hugo:
         interface: tunnel
         endpoint: localhost:1313
   - name: project-imagemagick
-  - name: project-flyctl
   - name: system
     plugs:
       hugo:
@@ -26,16 +24,27 @@ connections:
 actions:
   build: |
     set -euo pipefail
+    npm ci
     scripts/check-images
-    COMMIT=$(git rev-parse --short HEAD)
-    go generate ./...
-    go build -o jnsgruk -ldflags "-X main.commit=${COMMIT}" "$@" .
+    npm run build -- "$@"
   generate: |
     set -euo pipefail
-    go generate "$@" ./...
+    npm run build -- "$@"
   dev: |
     set -euo pipefail
-    hugo serve --bind 0.0.0.0 -s site -F "$@"
+    npm run dev -- "$@"
+  check: |
+    set -euo pipefail
+    npm ci
+    npm run check -- "$@"
+  preview: |
+    set -euo pipefail
+    npm run preview -- "$@"
+  deploy: |
+    set -euo pipefail
+    : "${CLOUDFLARE_API_TOKEN:?Forward CLOUDFLARE_API_TOKEN with workshop run --env CLOUDFLARE_API_TOKEN}"
+    : "${CLOUDFLARE_ACCOUNT_ID:?Forward CLOUDFLARE_ACCOUNT_ID with workshop run --env CLOUDFLARE_ACCOUNT_ID}"
+    npm run deploy -- "$@"
   images-optimize: |
     set -euo pipefail
     scripts/optimize-image "$@"

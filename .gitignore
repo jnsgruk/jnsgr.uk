@@ -1,9 +1,9 @@
 public/
 resources/
 site/resources/
-site/public
+site/public/
 .hugo_build.lock
-*.rock
-jnsgruk
-
 .workshop.lock
+node_modules/
+build/
+.wrangler/
