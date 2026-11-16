@@ -44,6 +44,8 @@ actions:
     set -euo pipefail
     : "${CLOUDFLARE_API_TOKEN:?Forward CLOUDFLARE_API_TOKEN with workshop run --env CLOUDFLARE_API_TOKEN}"
     : "${CLOUDFLARE_ACCOUNT_ID:?Forward CLOUDFLARE_ACCOUNT_ID with workshop run --env CLOUDFLARE_ACCOUNT_ID}"
+    npm ci
+    npm run check
     npm run deploy -- "$@"
   images-optimize: |
     set -euo pipefail
