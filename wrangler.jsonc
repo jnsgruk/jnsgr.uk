@@ -4,7 +4,7 @@
   "name": "website",
   // Keep route/routes omitted: Terraform owns custom domains and DNS.
   "compatibility_date": "2026-11-16",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": false,
   "assets": {
     "directory": "./public",
