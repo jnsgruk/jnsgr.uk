@@ -27,8 +27,9 @@ workshop run -- preview
 
 Workshop supplies Node.js and npm through the official
 [Node SDK](https://github.com/canonical/node-sdk) on `22/stable`, plus Hugo extended
-and ImageMagick. CI launches the same Workshop and runs its `check` and `deploy`
-actions. Run `workshop refresh` on the host after changing SDK definitions.
+and ImageMagick. CI launches the same Workshop: pull requests run `check`, while
+publishing runs the self-contained `deploy` action. Run `workshop refresh` on the
+host after changing SDK definitions.
 
 The theme is vendored in `site/_vendor`. `build`, `generate`, `images-check` and
 `images-optimize` are also available as Workshop actions.
@@ -54,10 +55,11 @@ Worker. Set the repository variable `CLOUDFLARE_ACCOUNT_ID` and secret
 `CLOUDFLARE_API_TOKEN`. DNS and domain bindings are managed in
 [jnsgruk/infra](https://github.com/jnsgruk/infra).
 
-To publish locally with both variables exported:
+To publish locally with both variables exported, run the self-contained action.
+It installs dependencies, checks images, builds the site, and dry-runs the
+deployment before publishing:
 
 ```shell
-workshop run -- check
 workshop run --env CLOUDFLARE_API_TOKEN --env CLOUDFLARE_ACCOUNT_ID -- deploy
 ```
 

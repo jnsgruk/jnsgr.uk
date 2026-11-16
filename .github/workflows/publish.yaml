@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -26,8 +23,6 @@ jobs:
         uses: canonical/launch-workshop@b9e184e38f49808ced78e25de19483fe02484c46 # v1
         with:
           cache: node:npm-cache
-      - name: Build and validate deployment
-        run: workshop run -- check
       - name: Publish to Cloudflare
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         env:
