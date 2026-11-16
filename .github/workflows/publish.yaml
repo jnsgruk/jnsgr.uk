@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Launch Workshop
-        uses: canonical/launch-workshop@b538173e2c4163488c4628b4aef79a6002475e76 # v1
+        uses: canonical/launch-workshop@b9e184e38f49808ced78e25de19483fe02484c46 # v1
         with:
           cache: node:npm-cache
       - name: Build and validate deployment
