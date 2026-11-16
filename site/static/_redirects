@@ -1,0 +1,62 @@
+# Shortlinks are maintained here. Rules take precedence over matching assets.
+/routes https://gist.github.com/jnsgruk/b590f114af1b041eeeab3e7f6e9851b7 301
+/routes/ https://gist.github.com/jnsgruk/b590f114af1b041eeeab3e7f6e9851b7 301
+
+/github https://github.com/jnsgruk 301
+/github/ https://github.com/jnsgruk 301
+/twitter https://twitter.com/jnsgruk 301
+/twitter/ https://twitter.com/jnsgruk 301
+/linkedin https://linkedin.com/in/jnsgruk 301
+/linkedin/ https://linkedin.com/in/jnsgruk 301
+/telegram https://t.me/jnsgruk/ 301
+/telegram/ https://t.me/jnsgruk/ 301
+/keybase https://keybase.io/jnsgruk 301
+/keybase/ https://keybase.io/jnsgruk 301
+/pinboard https://pinboard.in/u:jonseager 301
+/pinboard/ https://pinboard.in/u:jonseager 301
+/id https://keyoxide.org/4518BCC11BC096B80E5FBBAF337587962D8749A0 301
+/id/ https://keyoxide.org/4518BCC11BC096B80E5FBBAF337587962D8749A0 301
+/mastodon https://hachyderm.io/@jnsgruk 301
+/mastodon/ https://hachyderm.io/@jnsgruk 301
+/bluesky https://bsky.app/profile/jnsgr.uk 301
+/bluesky/ https://bsky.app/profile/jnsgr.uk 301
+
+/uses https://jnsgr.uk/2024/07/how-i-computer-in-2024/ 301
+/uses/ https://jnsgr.uk/2024/07/how-i-computer-in-2024/ 301
+
+/clf https://docs.google.com/spreadsheets/d/1YmSkKWyeEc-u9mPGjO8uI2HJzNArZpVW1oSqoD-9QGs 301
+/clf/ https://docs.google.com/spreadsheets/d/1YmSkKWyeEc-u9mPGjO8uI2HJzNArZpVW1oSqoD-9QGs 301
+/action-plan https://docs.google.com/document/d/14zZ3AJx4ybDIsaeQTvCpD3RRRcKU8JStBwsJVlbdiuo/edit?tab=t.0 301
+/action-plan/ https://docs.google.com/document/d/14zZ3AJx4ybDIsaeQTvCpD3RRRcKU8JStBwsJVlbdiuo/edit?tab=t.0 301
+
+/welcome https://docs.google.com/presentation/d/1hTAqZa8DxxifzD-lN_loHhS8cRaxdpG_6nSUenStr5Q/edit?usp=sharing 301
+/welcome/ https://docs.google.com/presentation/d/1hTAqZa8DxxifzD-lN_loHhS8cRaxdpG_6nSUenStr5Q/edit?usp=sharing 301
+/rooms https://events.canonical.com/event/156/page/942-meeting-rooms 301
+/rooms/ https://events.canonical.com/event/156/page/942-meeting-rooms 301
+/map https://drive.google.com/file/d/1I7SbbB80RMi4qg7y95OpATw1muuC4WdP/view 301
+/map/ https://drive.google.com/file/d/1I7SbbB80RMi4qg7y95OpATw1muuC4WdP/view 301
+
+/upki https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/ 301
+/upki/ https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/ 301
+/cad https://www.omgubuntu.co.uk/2026/10/ubuntu-ai-launcher-prototype 301
+/cad/ https://www.omgubuntu.co.uk/2026/10/ubuntu-ai-launcher-prototype 301
+/core-desktop https://discourse.ubuntu.com/t/accelerating-ubuntu-core-desktop/90547 301
+/core-desktop/ https://discourse.ubuntu.com/t/accelerating-ubuntu-core-desktop/90547 301
+/rust-bristol https://discourse.ubuntu.com/t/investing-in-automated-c-to-rust-translation/86369 301
+/rust-bristol/ https://discourse.ubuntu.com/t/investing-in-automated-c-to-rust-translation/86369 301
+
+# Preserve shared file URLs with a trailing slash by redirecting to the file.
+/*.css/ /:splat.css 301
+/*.html/ /:splat.html 301
+/*.ico/ /:splat.ico 301
+/*.jpeg/ /:splat.jpeg 301
+/*.jpg/ /:splat.jpg 301
+/*.js/ /:splat.js 301
+/*.json/ /:splat.json 301
+/*.md/ /:splat.md 301
+/*.png/ /:splat.png 301
+/*.svg/ /:splat.svg 301
+/*.txt/ /:splat.txt 301
+/*.webmanifest/ /:splat.webmanifest 301
+/*.webp/ /:splat.webp 301
+/*.xml/ /:splat.xml 301

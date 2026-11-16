@@ -1,70 +1,94 @@
 # jnsgr.uk
 
-This repository contains the code for my personal website https://jnsgr.uk.
+My personal website, rendered with [Hugo](https://gohugo.io) and the
+[Congo theme](https://jpanther.github.io/congo/), and hosted on
+[Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/).
+Pages, assets and shortlinks are published together from this repository.
 
-The site is built with [Hugo](https://gohugo.io), and served with
-[gosherve](https://github.com/jnsgruk/gosherve) — a small Go web server that serves static assets
-and URL redirects from a GitHub Gist.
+## Development
 
-The site is hosted on [Fly.io](https://fly.io) and deployed automatically with GitHub Actions.
-
-## Building
-
-This project uses [Canonical Workshop](https://github.com/canonical/workshop) for tool
-management and development actions. Install Workshop and configure LXD using the
-[setup guide](https://documentation.ubuntu.com/canonical-workshop/stable/tutorial/part-1-get-started/),
-then run:
+This project uses [Canonical Workshop](https://github.com/canonical/workshop).
+After installing Workshop and configuring LXD, run:
 
 ```shell
-# Create the development environment
 workshop launch
+# For an existing environment after pulling these changes:
+workshop refresh
 
-# Build the Go binary (checks images and generates the Hugo site)
-workshop run -- build
+# Install dependencies, check images, build Hugo, and validate with Wrangler:
+workshop run -- check
 
-# Serve the Hugo site during development
+# Hugo development server, exposed on localhost:1313:
 workshop run -- dev
 
-# Generate the site without building the binary
-workshop run -- generate
+# Preview the built site with Cloudflare's local runtime:
+workshop run -- preview
 ```
 
-The Store Go SDK supplies Go 1.27 and gopls.
-Small project SDKs in `.workshop/` install gofumpt, Hugo extended,
-ImageMagick, and flyctl, each with its own setup
-hook. Hugo uses the upstream extended binary so it can access Workshop’s `/project` mount. Run `workshop refresh` on the host after changing SDK definitions or hooks.
-Use `workshop shell` for an interactive environment with these tools available.
-The Hugo tunnel exposes the dev server at `http://localhost:1313` on the host.
-Actions that accept arguments pass them through, for example `workshop run -- dev --disableFastRender`.
+Workshop supplies Node.js and npm through the official
+[Node SDK](https://github.com/canonical/node-sdk) on `22/stable`, plus Hugo extended
+and ImageMagick. CI launches the same Workshop and runs its `check` and `deploy`
+actions. Run `workshop refresh` on the host after changing SDK definitions.
 
-The OCI image is built with [Rockcraft](https://canonical-rockcraft.readthedocs-hosted.com/):
+The theme is vendored in `site/_vendor`. `build`, `generate`, `images-check` and
+`images-optimize` are also available as Workshop actions.
+
+With those tools already installed, the equivalent commands are:
 
 ```shell
-rockcraft pack
+npm ci
+npm run check
+npm run preview
 ```
+
+`npm run build` renders production assets into `public/`, with the canonical URL
+`https://jnsgr.uk`. It regenerates image resources to avoid stale fingerprinted
+output and uses the Git commit timestamp as Hugo's build clock.
+`npm run check` checks the image policy, builds the site, and performs a Wrangler
+deployment dry run. Wrangler 4.162.0 and its dependencies are locked in npm.
+
+## Publishing
+
+[GitHub Actions](.github/workflows/publish.yaml) publishes `main` to the `website`
+Worker. Set the repository variable `CLOUDFLARE_ACCOUNT_ID` and secret
+`CLOUDFLARE_API_TOKEN`. DNS and domain bindings are managed in
+[jnsgruk/infra](https://github.com/jnsgruk/infra).
+
+To publish locally with both variables exported:
+
+```shell
+workshop run -- check
+workshop run --env CLOUDFLARE_API_TOKEN --env CLOUDFLARE_ACCOUNT_ID -- deploy
+```
+
+## Redirects
+
+Edit [site/static/_redirects](site/static/_redirects) to maintain shortlinks.
+Hugo copies it into `public/`, where Cloudflare interprets it on deployment.
+Use explicit status codes and include both slash variants when needed. Redirect
+rules take precedence over assets, so avoid sources already used by pages or files.
+The final wildcard rules preserve file URLs with an extra trailing slash.
+
+Incoming query parameters may be carried through to destinations without their
+own query string. Destinations with a query retain the configured query.
+Changes are reviewed in Git and published with the site; there is no Gist lookup,
+Bulk Redirect list, or separate redirect service.
 
 ## Images
 
-Post images are stored as [page resources](https://gohugo.io/content-management/page-resources/)
-alongside the post's `index.md`. Hugo generates responsive variants up to 1320 pixels wide, so
-source images should be no larger than 2640 pixels on either axis. This preserves enough resolution
-for high-density displays without embedding unnecessarily large originals in the server binary.
-
-WebP at quality 90 is the default format for raster images. It provides a good balance between
-photographic and screenshot quality while keeping source and direct-link downloads small. PNG is
-reserved for images that require transparency or genuinely lossless detail, and SVG remains
-appropriate for vector artwork. Raster assets must be no larger than 1.5 MiB.
-
-Use the image task before adding a new raster image to a post:
+Post images are stored as page resources alongside each post's `index.md`.
+Hugo generates responsive variants up to 1320 pixels wide. Source images should
+be no larger than 2640 pixels on either axis, and raster files must not exceed
+1.5 MiB. WebP at quality 90 is the default; use PNG when transparency or lossless
+detail is required, and SVG for vector artwork.
 
 ```shell
-# Writes image.webp alongside image.png, capped at 2640px and with metadata removed
+# Writes image.webp alongside image.png, capped at 2640px with metadata removed:
 workshop run -- images-optimize path/to/image.png
-
-# An explicit output path can be supplied when needed
+# An explicit output path is also supported:
 workshop run -- images-optimize path/to/image.png path/to/cover.webp
+workshop run -- images-check
 ```
 
-Review the generated image, update the Markdown or `cover` front matter to reference it, then remove
-the original. `workshop run -- images-check` validates dimensions and file sizes, and is also run
-automatically by `workshop run -- build` and the GitHub workflows before Rockcraft packaging.
+Review the image, update the post or cover reference, then remove the original.
+Image checks run as part of Workshop builds and GitHub validation.

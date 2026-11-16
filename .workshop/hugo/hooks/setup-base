@@ -9,8 +9,8 @@ case "$(dpkg --print-architecture)" in
   *) echo "Unsupported Hugo architecture" >&2; exit 1 ;;
 esac
 
-release_url=$(curl -fsSL -o /dev/null -w '%{url_effective}' https://github.com/gohugoio/hugo/releases/latest)
-version=${release_url##*/v}
+# Shared by local development and CI through Workshop.
+version=0.170.0
 archive="hugo_extended_${version}_linux-${architecture}.tar.gz"
 checksums="hugo_${version}_checksums.txt"
 download_dir=$(mktemp -d)

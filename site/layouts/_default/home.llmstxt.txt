@@ -7,7 +7,8 @@ Jon is a technical leader and software engineer working for Canonical as VP Engi
 His primary focus is leading the development of Ubuntu and Juju. In his own time, he's a
 keen open source software advocate with a long history of tinkering with the Linux desktop.
 
-This site is built with Go, Hugo, and Nix. The source is available on GitHub:
+This site is built with Hugo and hosted on Cloudflare Workers Static Assets.
+The source is available on GitHub:
 https://github.com/jnsgruk/jnsgr.uk
 
 ## Pages
