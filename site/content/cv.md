@@ -125,6 +125,7 @@ a range of topics:
 
 #### 2026
 
+- **Nov 2026**: [Ubuntu Core Desktop] - _Ask Noah Show_
 - **Nov 2026**: [Ubuntu Summit 26.10 Opening] - _Ubuntu Summit_
 - **Nov 2026**: [Ubuntu’s Core Reset] - _Linux Unplugged_
 - **Sep 2026**: [Rust Adoption At Scale In Ubuntu] - _RustConf 2026_
@@ -185,6 +186,7 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [release process]: https://jnsgr.uk/2025/05/supercharging-ubuntu-releases/
 [development of upki]: https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/
 [Debcrafters]: https://jnsgr.uk/2025/06/introducing-debcrafters/
+[Ubuntu Core Desktop]: https://podcast.asknoahshow.com/515
 [Ubuntu’s Core Reset]: https://linuxunplugged.com/692
 [Patch Me If You Can]: https://linuxunplugged.com/665
 [Rust Adoption At Scale]: https://www.youtube.com/watch?v=WOA4GA8tAWA
