@@ -129,7 +129,7 @@ a range of topics:
 - **Nov 2026**: [Ubuntu Core Desktop] - _Ask Noah Show_
 - **Nov 2026**: [Ubuntu Summit 26.10 Opening] - _Ubuntu Summit_
 - **Nov 2026**: [Ubuntu’s Core Reset] - _Linux Unplugged_
-- **Sep 2026**: [Rust Adoption At Scale In Ubuntu] - _RustConf 2026_
+- **Sep 2026**: [Rust Adoption At Scale With Ubuntu] - _RustConf 2026_
 - **Jul 2026**: [Why Canonical is Betting on Rust for Ubuntu] - _Francesco Ciulla_
 - **Jul 2026**: [Rust in Ubuntu] - _JetBrains Podcast_
 - **May 2026**: [Ubuntu Summit 26.04 Opening] - _Ubuntu Summit_
@@ -207,4 +207,4 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [How to build a Charmed Operator for Kubernetes]: https://www.youtube.com/watch?v=yxeJX2WRYjg&t=6914s
 [Rust in Ubuntu]: https://www.youtube.com/live/Doqwh1b4QyA
 [Why Canonical is Betting on Rust for Ubuntu]: https://www.youtube.com/watch?v=Tw-1DDODk9Q
-[Rust Adoption At Scale In Ubuntu]: https://www.youtube.com/watch?v=X-_jLdNrufQ
+[Rust Adoption At Scale With Ubuntu]: https://www.youtube.com/watch?v=X-_jLdNrufQ
