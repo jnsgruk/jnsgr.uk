@@ -125,6 +125,7 @@ a range of topics:
 
 #### 2026
 
+- **Nov 2026**: Rust Adoption at scale with ubuntu - _Zed x Rust London Meetup_
 - **Nov 2026**: [Ubuntu Core Desktop] - _Ask Noah Show_
 - **Nov 2026**: [Ubuntu Summit 26.10 Opening] - _Ubuntu Summit_
 - **Nov 2026**: [Ubuntu’s Core Reset] - _Linux Unplugged_
