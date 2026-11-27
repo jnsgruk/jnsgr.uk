@@ -125,6 +125,7 @@ a range of topics:
 
 #### 2026
 
+- **Nov 2026**: [Rust in Ubuntu with Jon Seager] - _Rustacean Station_
 - **Nov 2026**: Rust Adoption At Scale With Ubuntu - _Zed x Rust London Meetup_
 - **Nov 2026**: [Ubuntu Core Desktop] - _Ask Noah Show_
 - **Nov 2026**: [Ubuntu Summit 26.10 Opening] - _Ubuntu Summit_
@@ -187,6 +188,7 @@ You can contact me at [cv@sgrs.uk](mailto:cv@sgrs.uk) or on [Telegram](https://t
 [release process]: https://jnsgr.uk/2025/05/supercharging-ubuntu-releases/
 [development of upki]: https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/
 [Debcrafters]: https://jnsgr.uk/2025/06/introducing-debcrafters/
+[Rust in Ubuntu with Jon Seager]: https://www.youtube.com/watch?v=031Dsvy3tLs
 [Ubuntu Core Desktop]: https://podcast.asknoahshow.com/515
 [Ubuntu’s Core Reset]: https://linuxunplugged.com/692
 [Patch Me If You Can]: https://linuxunplugged.com/665
